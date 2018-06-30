@@ -11,9 +11,10 @@
     border-radius: 0px;
     box-shadow: none;
   }
+  
   .btn-register:hover,
   .btn-register:focus {
     color: #fff;
-    background-color: #2D3B55;
+    background-color: #007bff;
   }
   
