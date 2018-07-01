@@ -1,0 +1,8 @@
+<nav class="navbar navbar-dark bg-primary" style="margin-bottom: 100px">
+  <a class="navbar-brand" href="#">
+    Celebrity Name Game
+  </a>
+  <div class="form-inline my-2 my-lg-0">
+    <button *ngIf="this.auth.isLoggedIn()" class="btn btn-outline-light my-2 my-sm-0" (click)=logout()>Logout</button>
+  </div>
+</nav>
