@@ -28,17 +28,26 @@ export class HomeComponent implements OnInit {
 
   searchMovie() {
     const movieTitle = this.movieForm.value.title;
-    this.movieService.searchMovie(movieTitle).subscribe(
-      (movies: any) => {
-        this.movies = movies.results;
-        this.moviesPresent = true;
-      },
-      (error: any) => {
-        this.moviesPresent = false;
-        this.toastr.error(`No movie by the name ${movieTitle} exists in the database`, 'Invalid movie title', {
-          timeOut: 3000,
+    if (movieTitle.length >= 3) {
+      this.movieService.searchMovie(movieTitle).subscribe(
+        (movies: any) => {
+          this.movies = movies.results;
+          this.moviesPresent = true;
+        },
+        (error: any) => {
+          this.moviesPresent = false;
+          this.toastr.error(`No movie by the name ${movieTitle} exists in the database`, 'Invalid movie title', {
+            timeOut: 3000,
+          });
         });
-      });
+    }else{
+      this.moviesPresent = false;
+    }
+  }
 
+  gameStarted(title: string) {
+    // console.log('gameStarted '+title);
+    this.movieForm.get('title').setValue(title);
+    this.moviesPresent=false;
   }
 }
