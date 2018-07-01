@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+
 import { AppComponent } from './app.component';
 
 import { AngularFireModule } from 'angularfire2';
@@ -38,7 +42,10 @@ import { NavigationComponent } from './navigation/navigation.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    CommonModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

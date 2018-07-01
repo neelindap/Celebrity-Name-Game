@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private fb: FormBuilder, 
               private authService: AuthService, 
-              private router: Router) {
+              private router: Router,
+              private toastr: ToastrService) {
     this.loginForm = this.fb.group({
       email:['', Validators.required],
       password:['', Validators.required]
@@ -30,7 +32,12 @@ export class LoginComponent implements OnInit {
         console.log(res);
         this.router.navigate(['home']);
       })
-      .catch((err) => console.log('error: ' + err));
+      .catch((err) => {
+        // console.log('error: ' + err)
+        this.toastr.error('You\'ve entered invalid credentials', 'Invalid credentials', {
+          timeOut: 3000,
+        });
+      });
   }
 
 }

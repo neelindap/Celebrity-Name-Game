@@ -3,6 +3,7 @@ import { Router } from "@angular/router";
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable()
 export class AuthService {
@@ -10,13 +11,14 @@ export class AuthService {
   private user: Observable<firebase.User>;
   private userDetails: firebase.User = null;
 
-  constructor(private _firebaseAuth: AngularFireAuth, private router: Router) {
+  constructor(private _firebaseAuth: AngularFireAuth, 
+    private router: Router,
+    private toastr: ToastrService) {
     this.user = _firebaseAuth.authState;
     this.user.subscribe(
       (user) => {
         if (user) {
           this.userDetails = user;
-          // console.log(this.userDetails);
         }
         else {
           this.userDetails = null;
@@ -30,10 +32,20 @@ export class AuthService {
     return this._firebaseAuth.auth.signInWithEmailAndPassword(email, password)
   }
 
-  signUpWithEmail(email: string, password: string): firebase.Promise<FirebaseAuthState> {
+  signUpWithEmail(email: string, password: string): Promise<void> {
     return this._firebaseAuth.auth.createUserWithEmailAndPassword(email, password)
-      .then((res) => this.router.navigate(['/login']))
-      .catch(error => console.log(error));
+      .then((res) => {
+        this.router.navigate(['/login']);
+        this.toastr.success('You\'ve successfully registered. Please log in to continue', 'Success', {
+          timeOut: 3000,
+        });
+      })
+      .catch((error) => {
+        // console.log(error)
+        this.toastr.error('There was an error during registration. Please try again', 'Error', {
+          timeOut: 3000,
+        });
+      });
   }
 
 
