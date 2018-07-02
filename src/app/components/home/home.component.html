@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-md-12">
+    <div class="offset-md-2 col-md-8">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Search for a movie title</h5>
@@ -22,7 +22,7 @@
       </div>
     </div>
   </div>
-  
+
   <div class="loader m-auto" *ngIf="castLoading"></div>
 
   <div class="row mt-5" *ngIf="castPresent">
@@ -30,10 +30,20 @@
       <div class="card">
         <div class="card-header font-weight-bold">Naming the celebrities from {{movieForm.get('title').value}}</div>
         <div class="card-body">
-          <div class="container">
+          <div class="container-fluid">
             <div class="row">
-              <div class="card-group">
-                <app-cast *ngFor="let member of cast" [cast]="member" class="mx-auto my-4"></app-cast>
+              <div class="col-md-12">
+                <div class="card-group">
+                  <app-cast class="mx-auto my-4" *ngFor="let member of cast; let i=index" [index]="i" [cast]="member" [castNames]="castNames" (addToMap)="addToMap($event)" ></app-cast>
+                  <!-- <ul class="list-group">
+                    <li *ngFor="let member of cast" class="font-weight-bold text-center">{{member.name}} ({{member.character}}) </li>
+                  </ul> -->
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 offset-md-4">
+                  <button type="button" class="btn btn-success btn-block" (click)="submitAnswers()">SUBMIT</button>
               </div>
             </div>
           </div>
@@ -42,4 +52,3 @@
     </div>
   </div>
 </div>
-

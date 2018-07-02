@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
   signInWithEmail() {
     this.authService.signInRegular(this.loginForm.value.email, this.loginForm.value.password)
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         this.router.navigate(['home']);
       })
       .catch((err) => {

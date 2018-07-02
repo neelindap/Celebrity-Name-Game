@@ -20,6 +20,7 @@
     "@angular/platform-browser": "^6.0.3",
     "@angular/platform-browser-dynamic": "^6.0.3",
     "@angular/router": "^6.0.3",
+    "@typed/hashmap": "^1.0.1",
     "angular-toastr": "^2.1.1",
     "angularfire2": "^5.0.0-rc.11",
     "bootstrap": "^4.1.1",
