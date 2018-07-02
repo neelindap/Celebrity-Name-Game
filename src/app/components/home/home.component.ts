@@ -7,6 +7,8 @@ import { ToastrService } from 'ngx-toastr';
 
 import { Movie } from '../../models/movie.model';
 
+declare var $:any;
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -22,6 +24,8 @@ export class HomeComponent implements OnInit {
   private castPresent: boolean = false;
   private castLoading: boolean = false;
 
+  private started: boolean = false;
+
   constructor(private fb: FormBuilder,
     private movieService: MovieService,
     private castService: CastService,
@@ -32,6 +36,17 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+    $(document).on("click", ".start", (() => {
+      this.started = !this.started;
+      console.log('clicked');
+      $("[id^=name_]").draggable();
+      $('[id^=pic_]').droppable({
+        drop: function (event, ui){
+          $(ui.draggable).detach().css({top: 0,left: 0}).appendTo(this);
+        }
+      });
+    }));
+   
   }
 
   searchMovie() {
@@ -65,6 +80,7 @@ export class HomeComponent implements OnInit {
     this.castLoading = true;
     this.castService.searchCast(movieId).subscribe(
       (casts: any) => {
+        // TODO : Check if image is null -> dont add
         this.cast = casts.cast.splice(0, 5);
         this.castPresent = true;
         this.castLoading = false;
@@ -77,4 +93,14 @@ export class HomeComponent implements OnInit {
         });
       });
   }
+
+  setDroppable(){
+   
+    // $(document).on("click", "[id^=name_]", function (event) {
+      
+    //   $(this).draggable();
+     
+    // });
+  }
+  
 }
