@@ -29,6 +29,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/landing/login/login.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { MovieComponent } from './components/home/movie/movie.component';
+import { CastComponent } from './components/home/cast/cast.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { MovieComponent } from './components/home/movie/movie.component';
     HomeComponent,
     LoginComponent,
     NavigationComponent,
-    MovieComponent
+    MovieComponent,
+    CastComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Movie } from '../../../models/movie.model';
 
 @Component({
   selector: 'app-movie',
@@ -14,22 +13,27 @@ export class MovieComponent implements OnInit {
 
   @Input() movie: any;
   @Output() gameStarted = new EventEmitter<string>();
+  @Output() findCast = new EventEmitter<string>();
 
   private IMAGE_BASE: String = "https://image.tmdb.org/t/p/w154";
   private image: String;
+  
 
   constructor() {
   }
 
   ngOnInit() {
+    // TODO : poster_path = null -> set default image
     this.image = this.IMAGE_BASE + this.movie.poster_path;
   }
 
   playGame() {
+    // Update movie title in search box
     this.gameStarted.emit(this.movie.title);
-    const movieId = this.movie.id;
 
-    // GET MOVIE CAST
+    // Get Cast
+    const movieId = this.movie.id;
+    this.findCast.emit(movieId);
   }
 
 }

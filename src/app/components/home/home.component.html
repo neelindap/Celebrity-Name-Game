@@ -5,14 +5,12 @@
         <div class="card-body">
           <h5 class="card-title">Search for a movie title</h5>
           <form class="form-inline" novalidate [formGroup]="movieForm">
-            <input class="form-control col-md-12" [ngModel]="title" (keyup)="searchMovie()" formControlName="title" type="search" placeholder="Search for a movie title">
+            <input class="form-control col-md-12" [ngModel]="title" (keyup)="searchMovie()" formControlName="title" type="search" placeholder="Enter movie's name">
             <div class="col-md-12" *ngIf="moviesPresent">
               <ul class="list-group">
-                  <!-- <a (href)="alert('aaa')">{{movie.title}}</a> -->
-                  <app-movie *ngFor="let movie of movies" [movie]="movie" (gameStarted)="gameStarted($event)"></app-movie>
+                <app-movie *ngFor="let movie of movies" [movie]="movie" (gameStarted)="gameStarted($event)" (findCast)="findCast($event)"></app-movie>
               </ul>
             </div>
-
             <!-- <button class="btn btn-outline-success col-md-2 my-2 my-sm-0" type="submit" (click)="searchMovie()" [disabled]="movieForm.invalid">Search</button> -->
             <!-- <div *ngIf="movieForm.get('title').invalid && (movieForm.get('title').dirty || movieForm.get('title').touched)" class="alert alert-danger col-md-12">
               <div *ngIf="movieForm.get('title').errors.required">
@@ -24,21 +22,24 @@
       </div>
     </div>
   </div>
+  
+  <div class="loader m-auto" *ngIf="castLoading"></div>
 
-  <!-- <div class="row mt-5" *ngIf="moviesPresent && movieForm.get('title').valid">
+  <div class="row mt-5" *ngIf="castPresent">
     <div class="col-md-12">
       <div class="card">
-        <div class="card-header font-weight-bold">Movies with title: {{movieForm.get('title').value}}</div>
+        <div class="card-header font-weight-bold">Naming the celebrities from {{movieForm.get('title').value}}</div>
         <div class="card-body">
           <div class="container">
             <div class="row">
               <div class="card-group">
-                <app-movie *ngFor="let movie of movies" [movie]="movie" class="mx-auto my-4"></app-movie>
+                <app-cast *ngFor="let member of cast" [cast]="member" class="mx-auto my-4"></app-cast>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
 </div>
+

@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+
 import { MovieService } from '../../services/data/movie/movie.service';
-import { Movie } from '../../models/movie.model';
+import { CastService } from '../../services/data/cast/cast.service';
 import { ToastrService } from 'ngx-toastr';
+
+import { Movie } from '../../models/movie.model';
 
 @Component({
   selector: 'app-home',
@@ -15,8 +18,13 @@ export class HomeComponent implements OnInit {
   private movies: any[];
   private moviesPresent: boolean = false;
 
+  private cast: String[];
+  private castPresent: boolean = false;
+  private castLoading: boolean = false;
+
   constructor(private fb: FormBuilder,
     private movieService: MovieService,
+    private castService: CastService,
     private toastr: ToastrService) {
     this.movieForm = this.fb.group({
       title: ['', Validators.required]
@@ -40,14 +48,33 @@ export class HomeComponent implements OnInit {
             timeOut: 3000,
           });
         });
-    }else{
+    } else {
       this.moviesPresent = false;
+      this.castPresent = false;
     }
   }
 
   gameStarted(title: string) {
     // console.log('gameStarted '+title);
     this.movieForm.get('title').setValue(title);
-    this.moviesPresent=false;
+    this.moviesPresent = false;
+  }
+
+  // GET MOVIE CAST
+  findCast(movieId: string) {
+    this.castLoading = true;
+    this.castService.searchCast(movieId).subscribe(
+      (casts: any) => {
+        this.cast = casts.cast.splice(0, 5);
+        this.castPresent = true;
+        this.castLoading = false;
+      },
+      (error: any) => {
+        this.castPresent = false;
+        this.castLoading = false;
+        this.toastr.error(`No cast inforrmation present for the movie ${this.movieForm.value.title} exists in the database. Please try another movie.`, 'No cast present', {
+          timeOut: 3000,
+        });
+      });
   }
 }
