@@ -6,6 +6,7 @@ import { CastService } from '../../services/data/cast/cast.service';
 import { ToastrService } from 'ngx-toastr';
 
 import { Movie } from '../../models/movie.model';
+import { empty, size, set } from '@typed/hashmap';
 
 @Component({
   selector: 'app-home',
@@ -25,10 +26,14 @@ export class HomeComponent implements OnInit {
 
   private counter: number = 0;
 
+  private selectedAnswers = empty<number, string>();
+
   constructor(private fb: FormBuilder,
     private movieService: MovieService,
     private castService: CastService,
     private toastr: ToastrService) {
+
+    // Initialize form
     this.movieForm = this.fb.group({
       title: ['', Validators.required]
     })
@@ -37,6 +42,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  // Get movie details on Keyup
   searchMovie() {
     const movieTitle = this.movieForm.value.title;
     if (movieTitle.length >= 3) {
@@ -57,6 +63,7 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  // Trigger game start after movie selection -> Hide the autocomplete box and update textbox
   gameStarted(title: string) {
     // console.log('gameStarted '+title);
     this.movieForm.get('title').setValue(title);
@@ -83,8 +90,6 @@ export class HomeComponent implements OnInit {
               "name": e.name,
               "character": e.character
             };
-
-            // TODO : shuffle list
             this.castNames.push(json);
             this.counter++;
           }
@@ -94,6 +99,9 @@ export class HomeComponent implements OnInit {
         }
         this.castLoading = false;
 
+        // TODO : store in DB
+
+        // Shuffle list
         this.castNames = this.shuffle(this.castNames);
       },
       (error: any) => {
@@ -114,7 +122,32 @@ export class HomeComponent implements OnInit {
     return a;
   }
 
-  submitAnswers(){
-    console.log('submit');
+  // Add to answers map
+  addToMap(value: any) {
+    let selected = value.split(":");
+
+    let id = selected[0];
+    let cast_id = selected[1];
+    let cast_name = selected[2];
+
+    // Add to map
+    this.selectedAnswers = set(id, cast_id + ":" + cast_name, this.selectedAnswers);
   }
+
+  // Submit answers
+  submitAnswers() {
+    //Check if all answers are submitted. If not confirm box
+    let submitted = size(this.selectedAnswers);
+    if (submitted < 5) {
+
+      // Alert confirm box
+      if (!window.confirm("You haven't selected all answers! Are you sure you want to submit your answers?")) {
+        return;
+      }
+    }
+
+    // Submit answers
+    console.log('continue');
+  }
+
 }

@@ -34,7 +34,7 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="card-group">
-                  <app-cast *ngFor="let member of cast; let i=index" [index]="i" [cast]="member" [castNames]="castNames" class="mx-auto my-4"></app-cast>
+                  <app-cast class="mx-auto my-4" *ngFor="let member of cast; let i=index" [index]="i" [cast]="member" [castNames]="castNames" (addToMap)="addToMap($event)" ></app-cast>
                   <!-- <ul class="list-group">
                     <li *ngFor="let member of cast" class="font-weight-bold text-center">{{member.name}} ({{member.character}}) </li>
                   </ul> -->
