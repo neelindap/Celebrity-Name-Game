@@ -23,8 +23,11 @@ export class MovieComponent implements OnInit {
   }
 
   ngOnInit() {
-    // TODO : poster_path = null -> set default image
-    this.image = this.IMAGE_BASE + this.movie.poster_path;
+    // Placeholder for no poster
+    if(this.movie.poster_path == null)
+      this.image = 'assets/img/poster-placeholder.jpg';
+    else
+      this.image = this.IMAGE_BASE + this.movie.poster_path;
   }
 
   playGame() {

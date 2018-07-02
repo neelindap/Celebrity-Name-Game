@@ -1,6 +1,9 @@
 <div class="card h-100 d-inline-block" style="width: 18rem;">
   <img class="card-img-top" src="{{image}}">
   <div class="card-body">
-    <div class="font-weight-bold text-center">{{cast.name}} ({{cast.character}})</div>
+    <ul class="list-group" >
+      <li class="list-group-item font-weight-bold" *ngFor="let castName of castNames; let i=index" [class.active]="selectedIndex === i" 
+      (click)="selectedCast($event, i)"  data-id="{{index}}:{{cast.id}}:{{castName.name}}">{{castName.name}} ({{castName.character}})</li>
+    </ul>
   </div>
 </div>

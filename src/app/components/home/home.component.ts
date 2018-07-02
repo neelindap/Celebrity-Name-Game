@@ -18,9 +18,12 @@ export class HomeComponent implements OnInit {
   private movies: any[];
   private moviesPresent: boolean = false;
 
-  private cast: String[];
+  private cast: String[] = new Array();
+  private castNames: String[] = new Array();
   private castPresent: boolean = false;
   private castLoading: boolean = false;
+
+  private counter: number = 0;
 
   constructor(private fb: FormBuilder,
     private movieService: MovieService,
@@ -62,12 +65,36 @@ export class HomeComponent implements OnInit {
 
   // GET MOVIE CAST
   findCast(movieId: string) {
+    // Reset variables
+    this.cast = new Array();
+    this.castNames = new Array();
+    this.counter = 0;
+
     this.castLoading = true;
     this.castService.searchCast(movieId).subscribe(
       (casts: any) => {
-        this.cast = casts.cast.splice(0, 5);
-        this.castPresent = true;
+        for (let i in casts.cast) {
+          let e = casts.cast[i];
+          if (e.profile_path != null) {
+            this.cast.push(e);
+
+            let json: any = {
+              "id": e.id,
+              "name": e.name,
+              "character": e.character
+            };
+
+            // TODO : shuffle list
+            this.castNames.push(json);
+            this.counter++;
+          }
+          if (this.counter == 5)
+            break;
+          this.castPresent = true;
+        }
         this.castLoading = false;
+
+        this.castNames = this.shuffle(this.castNames);
       },
       (error: any) => {
         this.castPresent = false;
@@ -76,5 +103,18 @@ export class HomeComponent implements OnInit {
           timeOut: 3000,
         });
       });
+  }
+
+  // Shuffle array
+  shuffle(a) {
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  submitAnswers(){
+    console.log('submit');
   }
 }
