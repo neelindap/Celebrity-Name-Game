@@ -1,0 +1,29 @@
+<form novalidate [formGroup]="loginForm">
+  <div class="form-group">
+    <input type="email" tabindex="1" formControlName="email" class="form-control" placeholder="Email Address" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$">
+  </div>
+  <div *ngIf="loginForm.get('email').invalid && (loginForm.get('email').dirty || loginForm.get('email').touched)" class="alert alert-danger">
+    <div *ngIf="loginForm.get('email').errors.required">
+      Email address is required.
+    </div>
+    <div *ngIf="loginForm.get('email').errors.pattern">
+      Email address is not properly formatted.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <input type="password" tabindex="2" formControlName="password" class="form-control" placeholder="Password">
+  </div>
+  <div *ngIf="loginForm.get('password').invalid && (loginForm.get('password').dirty || loginForm.get('password').touched)"
+    class="alert alert-danger">
+    <div *ngIf="loginForm.get('password').errors.required">
+      Password is required.
+    </div>
+  </div>
+
+
+  <div class="col-sm-6 offset-sm-3">
+    <input type="submit" tabindex="3" (click)="signInWithEmail()" [disabled]="loginForm.invalid" class="form-control btn btn-dark"
+      value="LOG IN">
+  </div>
+</form>
