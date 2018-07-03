@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { MovieService } from '../../services/data/movie/movie.service';
 import { CastService } from '../../services/data/cast/cast.service';
+import { UserService } from '../../services/data/user/user.service';
 import { ToastrService } from 'ngx-toastr';
 
 import { Movie } from '../../models/movie.model';
@@ -31,6 +32,7 @@ export class HomeComponent implements OnInit {
   constructor(private fb: FormBuilder,
     private movieService: MovieService,
     private castService: CastService,
+    private userService: UserService,
     private toastr: ToastrService) {
 
     // Initialize form
@@ -100,6 +102,7 @@ export class HomeComponent implements OnInit {
         this.castLoading = false;
 
         // TODO : store in DB
+        // this.userService.gameEntry();
 
         // Shuffle list
         this.castNames = this.shuffle(this.castNames);

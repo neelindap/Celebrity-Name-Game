@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 
+
 // Firebase
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -16,7 +17,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 // Services
 import { AuthService } from './services/auth/auth.service';
 import { AuthGuard } from './services/auth/auth-guard.service';
-import { MovieService } from './services/data/movie/movie.service'
+import { MovieService } from './services/data/movie/movie.service';
+import { UserService } from './services/data/user/user.service';
 
 import { environment } from './../environments/environment';
 import { appRoutes } from './routes';
@@ -58,7 +60,8 @@ import { CastComponent } from './components/home/cast/cast.component';
   ],
   providers: [AuthService, 
     AuthGuard, 
-    MovieService
+    MovieService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })

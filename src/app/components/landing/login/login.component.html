@@ -1,6 +1,6 @@
 <form novalidate [formGroup]="loginForm">
   <div class="form-group">
-    <input type="email" tabindex="1" formControlName="email" class="form-control" placeholder="Email Address" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$">
+    <input type="email" tabindex="1" formControlName="email" class="form-control" placeholder="Email Address" pattern="^([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}$">
   </div>
   <div *ngIf="loginForm.get('email').invalid && (loginForm.get('email').dirty || loginForm.get('email').touched)" class="alert alert-danger">
     <div *ngIf="loginForm.get('email').errors.required">

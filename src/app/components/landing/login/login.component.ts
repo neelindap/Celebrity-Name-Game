@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit {
         // console.log(res);
         this.router.navigate(['home']);
       })
+      // TODO: Proper error messages
       .catch((err) => {
         // console.log('error: ' + err)
         this.toastr.error('You\'ve entered invalid credentials', 'Invalid credentials', {

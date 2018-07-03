@@ -1,9 +1,11 @@
 export class User {
+    name: string;
     email: string;
-    password: string;
+    score: number;
 
-    constructor(obj?: any) {
-        this.email = obj && obj.email || null;
-        this.password = obj && obj.password || null;
+    User(name, email, score){
+        this.name = name;
+        this.email = email;
+        this.score = score;
     }
 }
