@@ -11,12 +11,6 @@
                 <app-movie *ngFor="let movie of movies" [movie]="movie" (gameStarted)="gameStarted($event)" (findCast)="findCast($event)"></app-movie>
               </ul>
             </div>
-            <!-- <button class="btn btn-outline-success col-md-2 my-2 my-sm-0" type="submit" (click)="searchMovie()" [disabled]="movieForm.invalid">Search</button> -->
-            <!-- <div *ngIf="movieForm.get('title').invalid && (movieForm.get('title').dirty || movieForm.get('title').touched)" class="alert alert-danger col-md-12">
-              <div *ngIf="movieForm.get('title').errors.required">
-                Movie title is required.
-              </div>
-            </div> -->
           </form>
         </div>
       </div>
@@ -28,22 +22,30 @@
   <div class="row mt-5" *ngIf="castPresent">
     <div class="col-md-12">
       <div class="card">
-        <div class="card-header font-weight-bold">Naming the celebrities from {{movieForm.get('title').value}}</div>
+        <div class="card-header font-weight-bold">Naming celebrities from {{movieForm.get('title').value}}</div>
         <div class="card-body">
           <div class="container-fluid">
             <div class="row">
               <div class="col-md-12">
                 <div class="card-group">
-                  <app-cast class="mx-auto my-4" *ngFor="let member of cast; let i=index" [index]="i" [cast]="member" [castNames]="castNames" (addToMap)="addToMap($event)" ></app-cast>
-                  <!-- <ul class="list-group">
-                    <li *ngFor="let member of cast" class="font-weight-bold text-center">{{member.name}} ({{member.character}}) </li>
-                  </ul> -->
+                  <app-cast class="mx-auto my-4" *ngFor="let member of cast; let i=index" [index]="i" [cast]="member" [castNames]="castNames"
+                    (addToMap)="addToMap($event)" [answers]="answers"></app-cast>
                 </div>
               </div>
             </div>
             <div class="row">
-              <div class="col-md-4 offset-md-4">
-                  <button type="button" class="btn btn-success btn-block" (click)="submitAnswers()">SUBMIT</button>
+              <div class="col-md-2 offset-md-5" *ngIf="!answered">
+                <button type="button" class="btn btn-success btn-block" (click)="submitAnswers(this.key)">SUBMIT</button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-2 offset-md-5" *ngIf="answered">
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  You got {{score | async}} answers correct!
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>

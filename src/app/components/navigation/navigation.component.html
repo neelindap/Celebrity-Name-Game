@@ -10,7 +10,7 @@
 
   <div class="btn-group" *ngIf="this.auth.isLoggedIn()">
     <button class="btn btn-secondary btn-sm" type="button">
-      <span *ngIf="this.userService.getUserName()">{{this.getUserC()}}</span>
+      <span *ngIf="this.userService.getUserObj()">{{this.getUserName()}}</span>
     </button>
     <button type="button" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true"
       aria-expanded="false">

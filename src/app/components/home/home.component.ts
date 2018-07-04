@@ -3,10 +3,9 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { MovieService } from '../../services/data/movie/movie.service';
 import { CastService } from '../../services/data/cast/cast.service';
-import { UserService } from '../../services/data/user/user.service';
+import { GameService } from '../../services/data/game/game.service';
 import { ToastrService } from 'ngx-toastr';
 
-import { Movie } from '../../models/movie.model';
 import { empty, size, set } from '@typed/hashmap';
 
 @Component({
@@ -16,23 +15,31 @@ import { empty, size, set } from '@typed/hashmap';
 })
 export class HomeComponent implements OnInit {
 
+  // Movies
   public movieForm: FormGroup;
   private movies: any[];
   private moviesPresent: boolean = false;
 
+  // Cast
   private cast: String[] = new Array();
   private castNames: String[] = new Array();
   private castPresent: boolean = false;
   private castLoading: boolean = false;
-
   private counter: number = 0;
 
+  // Submitted Answers
   private selectedAnswers = empty<number, string>();
+  private key: string;
+
+  // Correct Answers
+  private answered: boolean = false;
+  private answers: any[];
+  private score: any;
 
   constructor(private fb: FormBuilder,
     private movieService: MovieService,
     private castService: CastService,
-    private userService: UserService,
+    private gameService: GameService,
     private toastr: ToastrService) {
 
     // Initialize form
@@ -46,6 +53,12 @@ export class HomeComponent implements OnInit {
 
   // Get movie details on Keyup
   searchMovie() {
+
+    // Reset answered status
+    this.answered = false;
+    this.answers = [];
+    this.castPresent = false;
+
     const movieTitle = this.movieForm.value.title;
     if (movieTitle.length >= 3) {
       this.movieService.searchMovie(movieTitle).subscribe(
@@ -101,8 +114,8 @@ export class HomeComponent implements OnInit {
         }
         this.castLoading = false;
 
-        // TODO : store in DB
-        // this.userService.gameEntry();
+        // store in DB -> Get stored item key
+        this.key = this.gameService.gameEntry(this.cast);
 
         // Shuffle list
         this.castNames = this.shuffle(this.castNames);
@@ -138,19 +151,43 @@ export class HomeComponent implements OnInit {
   }
 
   // Submit answers
-  submitAnswers() {
+  submitAnswers(key: string) {
+
     //Check if all answers are submitted. If not confirm box
     let submitted = size(this.selectedAnswers);
-    if (submitted < 5) {
 
-      // Alert confirm box
-      if (!window.confirm("You haven't selected all answers! Are you sure you want to submit your answers?")) {
-        return;
-      }
-    }
+    // Uncomment later
+    // if (submitted < 5) {
 
-    // Submit answers
-    console.log('continue');
+    //   // Alert confirm box
+    //   if (!window.confirm("You haven't selected all answers! Are you sure you want to submit your answers?")) {
+    //     return;
+    //   }
+    // }
+
+    // get correct answers
+    this.gameService.getCorrectAnswers(key, this.selectedAnswers);
+
+    // check answers
+    this.checkFinalAnswers();
+
+    // get final score
+    this.getFinalScore();
+
+    this.answered = true;
+  }
+
+  checkFinalAnswers() {
+    this.gameService.getFinalAnswers().subscribe(data => {
+      this.answers = data;
+    });
+
+  }
+
+  getFinalScore() {
+    this.gameService.getFinalScore().subscribe(s => {
+      this.score = s;
+    });
   }
 
 }

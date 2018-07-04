@@ -8,6 +8,9 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 
+import { environment } from './../environments/environment';
+import { appRoutes } from './routes';
+import { ToastrModule } from 'ngx-toastr';
 
 // Firebase
 import { AngularFireModule } from 'angularfire2';
@@ -19,10 +22,7 @@ import { AuthService } from './services/auth/auth.service';
 import { AuthGuard } from './services/auth/auth-guard.service';
 import { MovieService } from './services/data/movie/movie.service';
 import { UserService } from './services/data/user/user.service';
-
-import { environment } from './../environments/environment';
-import { appRoutes } from './routes';
-import { ToastrModule } from 'ngx-toastr';
+import { GameService } from './services/data/game/game.service';
 
 // Components
 import { LandingComponent } from './components/landing/landing.component';
@@ -61,7 +61,8 @@ import { CastComponent } from './components/home/cast/cast.component';
   providers: [AuthService, 
     AuthGuard, 
     MovieService,
-    UserService
+    UserService,
+    GameService    
   ],
   bootstrap: [AppComponent]
 })

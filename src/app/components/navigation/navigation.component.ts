@@ -23,13 +23,11 @@ export class NavigationComponent implements OnInit {
   }
 
   ngOnInit() {
-    // console.log('aaa '+this.userService.getUser());
-    // this.user = this.userService.getUser();
   }
 
-  getUserC() {
+  getUserName() {
     // console.log(this.userService.getUser());
-    this.user = this.userService.getUserName();
+    this.user = this.userService.getUserObj();
     if(this.user)
       return this.user.name;
   }

@@ -11,27 +11,27 @@ export class UserService {
 
   constructor(private firebase: AngularFireDatabase) { }
 
-  getUser(uid: string){
+  getUser(uid: string) {
     let ref = this.firebase.list('users');
-    ref.snapshotChanges().subscribe( item => {
-      // console.log(item)
+    ref.snapshotChanges().subscribe(item => {
       item.forEach(element => {
-        // console.log(element.key)
-        if(element.key === uid){
+        if (element.key === uid) {
           this.user = element.payload.toJSON();
-          // console.log(this.user)
+          this.user.key = element.key;
           return;
         }
       })
     });
   }
 
-  getUserName(){
-    // console.log('called '+this.user);
+  getUserObj() {
     return this.user;
   }
 
-  insertUser(user: User){
+  //TODO: create new user
+  insertUser(user: User) {
 
-  } 
+  }
+
+  
 }
