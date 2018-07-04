@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { forEach } from '@typed/hashmap';
-import { of } from 'rxjs';
+import { Subject } from 'rxjs';
 import { UserService } from '../user/user.service';
 
 @Injectable({
@@ -11,9 +11,8 @@ export class GameService {
 
   public correctAnswers: any;
 
-  // Observed variables
-  private answers;
-  private score;
+  // Subject Observale for answers
+  public subject = new Subject();
 
   // Firebase variables
   private ref;
@@ -39,8 +38,8 @@ export class GameService {
 
   getCorrectAnswers(key: string, selectedAnswers: any) {
     // Initialize variables
-    this.answers = new Array();
-    this.score = 0;
+    let answers = new Array();
+    let score = 0;
 
     this.subscription = this.ref.snapshotChanges().subscribe(item => {
       item.forEach(element => {
@@ -57,30 +56,33 @@ export class GameService {
 
             // Add blank entries for unanswered questions
             while (index != i) {
-              this.answers.push(i + ":" + '');
+              answers.push(i + ":" + '');
               i++;
             }
 
             // Increment score of correct answers
             if (this.correctAnswers.ans[index] == value) {
-              this.score++;
+              score++;
             }
 
             // Add correct/wrong answer for cast index
-            this.answers.push(key + ":" + (this.correctAnswers.ans[index] == value));
+            answers.push(key + ":" + (this.correctAnswers.ans[index] == value));
             i++;
           }, selectedAnswers);
 
           // Update score in db
-          this.userService.updateUser(this.score);
+          this.userService.updateUser(score);
+
+          // Emit answers object to subscribers
+          this.subject.next(answers);
         }
       });
     });
   }
 
-  getFinalAnswers() {
-    return of(this.answers);
-  }
+  // getFinalAnswers() {
+  //   return of(this.answers);
+  // }
 
   unsubscriveFromObject() {
     // Unsubscribe on game end

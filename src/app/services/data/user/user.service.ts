@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { User } from '../../../models/user.model';
-import { of } from 'rxjs';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,9 +9,13 @@ import { of } from 'rxjs';
 export class UserService {
 
   private user: any;
-  private score: any;
 
-  constructor(private firebase: AngularFireDatabase) { }
+  // Subject Observable for score
+  public subject = new Subject();
+
+  constructor(private firebase: AngularFireDatabase) {
+   
+  }
 
   // Get logged in user details
   getUser(uid: string) {
@@ -46,12 +50,7 @@ export class UserService {
       score: this.user.score + score
     });
 
-    this.score = score;
-    console.log('neth '+this.score);
-  }
-
-  getFinalScore() {
-    return of(this.score);
+    this.subject.next(score)
   }
 
 }
