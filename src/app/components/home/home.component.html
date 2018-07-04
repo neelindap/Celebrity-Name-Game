@@ -19,6 +19,8 @@
 
   <div class="loader m-auto" *ngIf="castLoading"></div>
 
+  <!-- TODO : No results found-->
+
   <div class="row mt-5" *ngIf="castPresent">
     <div class="col-md-12">
       <div class="card">
@@ -41,7 +43,7 @@
             <div class="row">
               <div class="col-md-2 offset-md-5" *ngIf="answered">
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
-                  You got {{score | async}} answers correct!
+                  You got {{score}} answers correct!
                   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
