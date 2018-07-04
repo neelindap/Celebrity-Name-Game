@@ -98,22 +98,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var angularfire2__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! angularfire2 */ "./node_modules/angularfire2/index.js");
-/* harmony import */ var angularfire2_database__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! angularfire2/database */ "./node_modules/angularfire2/database/index.js");
-/* harmony import */ var angularfire2_auth__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! angularfire2/auth */ "./node_modules/angularfire2/auth/index.js");
-/* harmony import */ var _services_auth_auth_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./services/auth/auth.service */ "./src/app/services/auth/auth.service.ts");
-/* harmony import */ var _services_auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./services/auth/auth-guard.service */ "./src/app/services/auth/auth-guard.service.ts");
-/* harmony import */ var _services_data_movie_movie_service__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./services/data/movie/movie.service */ "./src/app/services/data/movie/movie.service.ts");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./../environments/environment */ "./src/environments/environment.ts");
-/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./routes */ "./src/app/routes.ts");
-/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
-/* harmony import */ var _components_landing_landing_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/landing/landing.component */ "./src/app/components/landing/landing.component.ts");
-/* harmony import */ var _components_landing_register_register_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/landing/register/register.component */ "./src/app/components/landing/register/register.component.ts");
-/* harmony import */ var _components_home_home_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/home/home.component */ "./src/app/components/home/home.component.ts");
-/* harmony import */ var _components_landing_login_login_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/landing/login/login.component */ "./src/app/components/landing/login/login.component.ts");
-/* harmony import */ var _components_navigation_navigation_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/navigation/navigation.component */ "./src/app/components/navigation/navigation.component.ts");
-/* harmony import */ var _components_home_movie_movie_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/home/movie/movie.component */ "./src/app/components/home/movie/movie.component.ts");
-/* harmony import */ var _components_home_cast_cast_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/home/cast/cast.component */ "./src/app/components/home/cast/cast.component.ts");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./routes */ "./src/app/routes.ts");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var angularfire2__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! angularfire2 */ "./node_modules/angularfire2/index.js");
+/* harmony import */ var angularfire2_database__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! angularfire2/database */ "./node_modules/angularfire2/database/index.js");
+/* harmony import */ var angularfire2_auth__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! angularfire2/auth */ "./node_modules/angularfire2/auth/index.js");
+/* harmony import */ var _services_auth_auth_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./services/auth/auth.service */ "./src/app/services/auth/auth.service.ts");
+/* harmony import */ var _services_auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./services/auth/auth-guard.service */ "./src/app/services/auth/auth-guard.service.ts");
+/* harmony import */ var _services_data_movie_movie_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./services/data/movie/movie.service */ "./src/app/services/data/movie/movie.service.ts");
+/* harmony import */ var _services_data_user_user_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./services/data/user/user.service */ "./src/app/services/data/user/user.service.ts");
+/* harmony import */ var _services_data_game_game_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./services/data/game/game.service */ "./src/app/services/data/game/game.service.ts");
+/* harmony import */ var _components_landing_landing_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/landing/landing.component */ "./src/app/components/landing/landing.component.ts");
+/* harmony import */ var _components_landing_register_register_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/landing/register/register.component */ "./src/app/components/landing/register/register.component.ts");
+/* harmony import */ var _components_home_home_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/home/home.component */ "./src/app/components/home/home.component.ts");
+/* harmony import */ var _components_landing_login_login_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/landing/login/login.component */ "./src/app/components/landing/login/login.component.ts");
+/* harmony import */ var _components_navigation_navigation_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/navigation/navigation.component */ "./src/app/components/navigation/navigation.component.ts");
+/* harmony import */ var _components_home_movie_movie_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/home/movie/movie.component */ "./src/app/components/home/movie/movie.component.ts");
+/* harmony import */ var _components_home_cast_cast_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/home/cast/cast.component */ "./src/app/components/home/cast/cast.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -129,12 +131,14 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+
+
 // Firebase
 
 
 
 // Services
-
 
 
 
@@ -155,30 +159,32 @@ var AppModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"],
-                _components_landing_landing_component__WEBPACK_IMPORTED_MODULE_17__["LandingComponent"],
-                _components_landing_register_register_component__WEBPACK_IMPORTED_MODULE_18__["RegisterComponent"],
-                _components_home_home_component__WEBPACK_IMPORTED_MODULE_19__["HomeComponent"],
-                _components_landing_login_login_component__WEBPACK_IMPORTED_MODULE_20__["LoginComponent"],
-                _components_navigation_navigation_component__WEBPACK_IMPORTED_MODULE_21__["NavigationComponent"],
-                _components_home_movie_movie_component__WEBPACK_IMPORTED_MODULE_22__["MovieComponent"],
-                _components_home_cast_cast_component__WEBPACK_IMPORTED_MODULE_23__["CastComponent"]
+                _components_landing_landing_component__WEBPACK_IMPORTED_MODULE_19__["LandingComponent"],
+                _components_landing_register_register_component__WEBPACK_IMPORTED_MODULE_20__["RegisterComponent"],
+                _components_home_home_component__WEBPACK_IMPORTED_MODULE_21__["HomeComponent"],
+                _components_landing_login_login_component__WEBPACK_IMPORTED_MODULE_22__["LoginComponent"],
+                _components_navigation_navigation_component__WEBPACK_IMPORTED_MODULE_23__["NavigationComponent"],
+                _components_home_movie_movie_component__WEBPACK_IMPORTED_MODULE_24__["MovieComponent"],
+                _components_home_cast_cast_component__WEBPACK_IMPORTED_MODULE_25__["CastComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ReactiveFormsModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"],
-                angularfire2__WEBPACK_IMPORTED_MODULE_8__["AngularFireModule"].initializeApp(_environments_environment__WEBPACK_IMPORTED_MODULE_14__["environment"].firebase),
-                angularfire2_database__WEBPACK_IMPORTED_MODULE_9__["AngularFireDatabaseModule"],
-                angularfire2_auth__WEBPACK_IMPORTED_MODULE_10__["AngularFireAuthModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterModule"].forRoot(_routes__WEBPACK_IMPORTED_MODULE_15__["appRoutes"]),
+                angularfire2__WEBPACK_IMPORTED_MODULE_11__["AngularFireModule"].initializeApp(_environments_environment__WEBPACK_IMPORTED_MODULE_8__["environment"].firebase),
+                angularfire2_database__WEBPACK_IMPORTED_MODULE_12__["AngularFireDatabaseModule"],
+                angularfire2_auth__WEBPACK_IMPORTED_MODULE_13__["AngularFireAuthModule"],
+                _angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterModule"].forRoot(_routes__WEBPACK_IMPORTED_MODULE_9__["appRoutes"]),
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["BrowserAnimationsModule"],
-                ngx_toastr__WEBPACK_IMPORTED_MODULE_16__["ToastrModule"].forRoot()
+                ngx_toastr__WEBPACK_IMPORTED_MODULE_10__["ToastrModule"].forRoot()
             ],
-            providers: [_services_auth_auth_service__WEBPACK_IMPORTED_MODULE_11__["AuthService"],
-                _services_auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_12__["AuthGuard"],
-                _services_data_movie_movie_service__WEBPACK_IMPORTED_MODULE_13__["MovieService"]
+            providers: [_services_auth_auth_service__WEBPACK_IMPORTED_MODULE_14__["AuthService"],
+                _services_auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_15__["AuthGuard"],
+                _services_data_movie_movie_service__WEBPACK_IMPORTED_MODULE_16__["MovieService"],
+                _services_data_user_user_service__WEBPACK_IMPORTED_MODULE_17__["UserService"],
+                _services_data_game_game_service__WEBPACK_IMPORTED_MODULE_18__["GameService"]
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]]
         })
@@ -197,7 +203,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".true{\r\n    border: 8px solid #28a745 !important\r\n}\r\n\r\n.false{\r\n    border: 8px solid #dc3545!important\r\n}"
 
 /***/ }),
 
@@ -208,7 +214,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"card h-100 d-inline-block\" style=\"width: 18rem;\">\r\n  <img class=\"card-img-top\" src=\"{{image}}\">\r\n  <div class=\"card-body\">\r\n    <ul class=\"list-group\" >\r\n      <li class=\"list-group-item font-weight-bold\" *ngFor=\"let castName of castNames; let i=index\" [class.active]=\"selectedIndex === i\" \r\n      (click)=\"selectedCast($event, i)\"  data-id=\"{{index}}:{{cast.id}}:{{castName.name}}\">{{castName.name}} ({{castName.character}})</li>\r\n    </ul>\r\n  </div>\r\n</div>"
+module.exports = "<div class=\"card h-100 d-inline-block\" style=\"width: 18rem;\" [ngClass]=\"(answers !== undefined && answers[index] !== undefined && index == answers[index].split(':')[0])? \r\nanswers[index].split(':')[1] : ''\">\r\n  <img class=\"card-img-top\" src=\"{{image}}\">\r\n  <div class=\"card-body\">\r\n    <ul class=\"list-group\" >\r\n      <li class=\"list-group-item font-weight-bold\" *ngFor=\"let castName of castNames; let i=index\" [class.active]=\"selectedIndex === i\" \r\n      (click)=\"selectedCast($event, i)\"  data-id=\"{{index}}:{{cast.id}}:{{castName.name}}\">{{castName.name}} ({{castName.character}})</li>\r\n    </ul>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -241,15 +247,17 @@ var CastComponent = /** @class */ (function () {
     }
     CastComponent.prototype.ngOnInit = function () {
         this.image = this.IMAGE_BASE + this.cast.profile_path;
-        // console.log('init '+this.selectedAnswers);
     };
     // Cast member selected
     CastComponent.prototype.selectedCast = function (event, index) {
-        var target = event.target || event.srcElement || event.currentTarget;
-        var idAttr = target.attributes.id;
-        var value = idAttr.nodeValue;
-        this.setIndex(index);
-        this.addToMap.emit(value);
+        // Don't allow selection after game is completed
+        if (this.answers.length === 0) {
+            var target = event.target || event.srcElement || event.currentTarget;
+            var idAttr = target.attributes.id;
+            var value = idAttr.nodeValue;
+            this.setIndex(index);
+            this.addToMap.emit(value);
+        }
     };
     // Set index of selected element
     CastComponent.prototype.setIndex = function (index) {
@@ -267,6 +275,10 @@ var CastComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
         __metadata("design:type", Object)
     ], CastComponent.prototype, "index", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
+    ], CastComponent.prototype, "answers", void 0);
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
         __metadata("design:type", Object)
@@ -304,7 +316,7 @@ module.exports = "ul {\r\n    list-style-type: none;\r\n  }\r\n\r\n  .loader {\r
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\r\n  <div class=\"row\">\r\n    <div class=\"offset-md-2 col-md-8\">\r\n      <div class=\"card\">\r\n        <div class=\"card-body\">\r\n          <h5 class=\"card-title\">Search for a movie title</h5>\r\n          <form class=\"form-inline\" novalidate [formGroup]=\"movieForm\">\r\n            <input class=\"form-control col-md-12\" [ngModel]=\"title\" (keyup)=\"searchMovie()\" formControlName=\"title\" type=\"search\" placeholder=\"Enter movie's name\">\r\n            <div class=\"col-md-12\" *ngIf=\"moviesPresent\">\r\n              <ul class=\"list-group\">\r\n                <app-movie *ngFor=\"let movie of movies\" [movie]=\"movie\" (gameStarted)=\"gameStarted($event)\" (findCast)=\"findCast($event)\"></app-movie>\r\n              </ul>\r\n            </div>\r\n            <!-- <button class=\"btn btn-outline-success col-md-2 my-2 my-sm-0\" type=\"submit\" (click)=\"searchMovie()\" [disabled]=\"movieForm.invalid\">Search</button> -->\r\n            <!-- <div *ngIf=\"movieForm.get('title').invalid && (movieForm.get('title').dirty || movieForm.get('title').touched)\" class=\"alert alert-danger col-md-12\">\r\n              <div *ngIf=\"movieForm.get('title').errors.required\">\r\n                Movie title is required.\r\n              </div>\r\n            </div> -->\r\n          </form>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"loader m-auto\" *ngIf=\"castLoading\"></div>\r\n\r\n  <div class=\"row mt-5\" *ngIf=\"castPresent\">\r\n    <div class=\"col-md-12\">\r\n      <div class=\"card\">\r\n        <div class=\"card-header font-weight-bold\">Naming the celebrities from {{movieForm.get('title').value}}</div>\r\n        <div class=\"card-body\">\r\n          <div class=\"container-fluid\">\r\n            <div class=\"row\">\r\n              <div class=\"col-md-12\">\r\n                <div class=\"card-group\">\r\n                  <app-cast class=\"mx-auto my-4\" *ngFor=\"let member of cast; let i=index\" [index]=\"i\" [cast]=\"member\" [castNames]=\"castNames\" (addToMap)=\"addToMap($event)\" ></app-cast>\r\n                  <!-- <ul class=\"list-group\">\r\n                    <li *ngFor=\"let member of cast\" class=\"font-weight-bold text-center\">{{member.name}} ({{member.character}}) </li>\r\n                  </ul> -->\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"row\">\r\n              <div class=\"col-md-4 offset-md-4\">\r\n                  <button type=\"button\" class=\"btn btn-success btn-block\" (click)=\"submitAnswers()\">SUBMIT</button>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>"
+module.exports = "<div class=\"container-fluid\">\r\n  <div class=\"row\">\r\n    <div class=\"offset-md-2 col-md-8\">\r\n      <div class=\"card\">\r\n        <div class=\"card-body\">\r\n          <h5 class=\"card-title\">Search for a movie title</h5>\r\n          <form class=\"form-inline\" novalidate [formGroup]=\"movieForm\">\r\n            <input class=\"form-control col-md-12\" [ngModel]=\"title\" (keyup)=\"searchMovie()\" formControlName=\"title\" type=\"search\" placeholder=\"Enter movie's name\">\r\n            <div class=\"col-md-12\" *ngIf=\"moviesPresent\">\r\n              <ul class=\"list-group\">\r\n                <app-movie *ngFor=\"let movie of movies\" [movie]=\"movie\" (gameStarted)=\"gameStarted($event)\" (findCast)=\"findCast($event)\"></app-movie>\r\n              </ul>\r\n            </div>\r\n          </form>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"loader m-auto\" *ngIf=\"castLoading\"></div>\r\n\r\n  <div class=\"row mt-5\" *ngIf=\"castPresent\">\r\n    <div class=\"col-md-12\">\r\n      <div class=\"card\">\r\n        <div class=\"card-header font-weight-bold\">Naming celebrities from {{movieForm.get('title').value}}</div>\r\n        <div class=\"card-body\">\r\n          <div class=\"container-fluid\">\r\n            <div class=\"row\">\r\n              <div class=\"col-md-12\">\r\n                <div class=\"card-group\">\r\n                  <app-cast class=\"mx-auto my-4\" *ngFor=\"let member of cast; let i=index\" [index]=\"i\" [cast]=\"member\" [castNames]=\"castNames\"\r\n                    (addToMap)=\"addToMap($event)\" [answers]=\"answers\"></app-cast>\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"row\">\r\n              <div class=\"col-md-2 offset-md-5\" *ngIf=\"!answered\">\r\n                <button type=\"button\" class=\"btn btn-success btn-block\" (click)=\"submitAnswers(this.key)\">SUBMIT</button>\r\n              </div>\r\n            </div>\r\n            <div class=\"row\">\r\n              <div class=\"col-md-2 offset-md-5\" *ngIf=\"answered\">\r\n                <div class=\"alert alert-success alert-dismissible fade show\" role=\"alert\">\r\n                  You got {{score | async}} answers correct!\r\n                  <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\r\n                    <span aria-hidden=\"true\">&times;</span>\r\n                  </button>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -322,8 +334,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _services_data_movie_movie_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/data/movie/movie.service */ "./src/app/services/data/movie/movie.service.ts");
 /* harmony import */ var _services_data_cast_cast_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/data/cast/cast.service */ "./src/app/services/data/cast/cast.service.ts");
-/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
-/* harmony import */ var _typed_hashmap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @typed/hashmap */ "./node_modules/@typed/hashmap/lib.es2015/index.js");
+/* harmony import */ var _services_data_game_game_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/data/game/game.service */ "./src/app/services/data/game/game.service.ts");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var _typed_hashmap__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @typed/hashmap */ "./node_modules/@typed/hashmap/lib.es2015/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -339,19 +352,25 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var HomeComponent = /** @class */ (function () {
-    function HomeComponent(fb, movieService, castService, toastr) {
+    function HomeComponent(fb, movieService, castService, gameService, toastr) {
         this.fb = fb;
         this.movieService = movieService;
         this.castService = castService;
+        this.gameService = gameService;
         this.toastr = toastr;
         this.moviesPresent = false;
+        // Cast
         this.cast = new Array();
         this.castNames = new Array();
         this.castPresent = false;
         this.castLoading = false;
         this.counter = 0;
-        this.selectedAnswers = Object(_typed_hashmap__WEBPACK_IMPORTED_MODULE_5__["empty"])();
+        // Submitted Answers
+        this.selectedAnswers = Object(_typed_hashmap__WEBPACK_IMPORTED_MODULE_6__["empty"])();
+        // Correct Answers
+        this.answered = false;
         // Initialize form
         this.movieForm = this.fb.group({
             title: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]
@@ -362,6 +381,10 @@ var HomeComponent = /** @class */ (function () {
     // Get movie details on Keyup
     HomeComponent.prototype.searchMovie = function () {
         var _this = this;
+        // Reset answered status
+        this.answered = false;
+        this.answers = [];
+        this.castPresent = false;
         var movieTitle = this.movieForm.value.title;
         if (movieTitle.length >= 3) {
             this.movieService.searchMovie(movieTitle).subscribe(function (movies) {
@@ -411,7 +434,8 @@ var HomeComponent = /** @class */ (function () {
                 _this.castPresent = true;
             }
             _this.castLoading = false;
-            // TODO : store in DB
+            // store in DB -> Get stored item key
+            _this.key = _this.gameService.gameEntry(_this.cast);
             // Shuffle list
             _this.castNames = _this.shuffle(_this.castNames);
         }, function (error) {
@@ -438,20 +462,38 @@ var HomeComponent = /** @class */ (function () {
         var cast_id = selected[1];
         var cast_name = selected[2];
         // Add to map
-        this.selectedAnswers = Object(_typed_hashmap__WEBPACK_IMPORTED_MODULE_5__["set"])(id, cast_id + ":" + cast_name, this.selectedAnswers);
+        this.selectedAnswers = Object(_typed_hashmap__WEBPACK_IMPORTED_MODULE_6__["set"])(id, cast_id + ":" + cast_name, this.selectedAnswers);
     };
     // Submit answers
-    HomeComponent.prototype.submitAnswers = function () {
+    HomeComponent.prototype.submitAnswers = function (key) {
         //Check if all answers are submitted. If not confirm box
-        var submitted = Object(_typed_hashmap__WEBPACK_IMPORTED_MODULE_5__["size"])(this.selectedAnswers);
-        if (submitted < 5) {
-            // Alert confirm box
-            if (!window.confirm("You haven't selected all answers! Are you sure you want to submit your answers?")) {
-                return;
-            }
-        }
-        // Submit answers
-        console.log('continue');
+        var submitted = Object(_typed_hashmap__WEBPACK_IMPORTED_MODULE_6__["size"])(this.selectedAnswers);
+        // Uncomment later
+        // if (submitted < 5) {
+        //   // Alert confirm box
+        //   if (!window.confirm("You haven't selected all answers! Are you sure you want to submit your answers?")) {
+        //     return;
+        //   }
+        // }
+        // get correct answers
+        this.gameService.getCorrectAnswers(key, this.selectedAnswers);
+        // check answers
+        this.checkFinalAnswers();
+        // get final score
+        this.getFinalScore();
+        this.answered = true;
+    };
+    HomeComponent.prototype.checkFinalAnswers = function () {
+        var _this = this;
+        this.gameService.getFinalAnswers().subscribe(function (data) {
+            _this.answers = data;
+        });
+    };
+    HomeComponent.prototype.getFinalScore = function () {
+        var _this = this;
+        this.gameService.getFinalScore().subscribe(function (s) {
+            _this.score = s;
+        });
     };
     HomeComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -462,7 +504,8 @@ var HomeComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"],
             _services_data_movie_movie_service__WEBPACK_IMPORTED_MODULE_2__["MovieService"],
             _services_data_cast_cast_service__WEBPACK_IMPORTED_MODULE_3__["CastService"],
-            ngx_toastr__WEBPACK_IMPORTED_MODULE_4__["ToastrService"]])
+            _services_data_game_game_service__WEBPACK_IMPORTED_MODULE_4__["GameService"],
+            ngx_toastr__WEBPACK_IMPORTED_MODULE_5__["ToastrService"]])
     ], HomeComponent);
     return HomeComponent;
 }());
@@ -489,7 +532,7 @@ module.exports = "img{\r\n    width: 32px;\r\n}\r\n\r\nli { \r\n    cursor: poin
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <div class=\"card h-100 d-inline-block\" style=\"width: 18rem;\">\n  <img class=\"card-img-top\" src=\"{{image}}\" alt=\"{{movie.title}}'s poster'\">\n  <div class=\"card-body\">\n    <div class=\"font-weight-bold text-center\">{{movie.title}}</div>\n    <p class=\"card-text text-truncate\" data-toggle=\"tooltip\" title=\"{{movie.overview}}\">{{movie.overview}}</p>\n    <button href=\"#\" class=\"btn btn-primary\">Play!</button>\n  </div>\n</div> -->\n\n<li class=\"list-group-item\" (click)=\"playGame()\">\n  <img class=\"card-img-top\" src=\"{{image}}\" alt=\"{{movie.title}}'s poster\">\n  <span class=\"ml-3 text-primary\"><b>{{movie.title}}</b> ({{movie.release_date | slice:0:4 }})</span>\n</li>"
+module.exports = "<!-- <div class=\"card h-100 d-inline-block\" style=\"width: 18rem;\">\r\n  <img class=\"card-img-top\" src=\"{{image}}\" alt=\"{{movie.title}}'s poster'\">\r\n  <div class=\"card-body\">\r\n    <div class=\"font-weight-bold text-center\">{{movie.title}}</div>\r\n    <p class=\"card-text text-truncate\" data-toggle=\"tooltip\" title=\"{{movie.overview}}\">{{movie.overview}}</p>\r\n    <button href=\"#\" class=\"btn btn-primary\">Play!</button>\r\n  </div>\r\n</div> -->\r\n\r\n<li class=\"list-group-item\" (click)=\"playGame()\">\r\n  <img class=\"card-img-top\" src=\"{{image}}\" alt=\"{{movie.title}}'s poster\">\r\n  <span class=\"ml-3 text-primary\"><b>{{movie.title}}</b> ({{movie.release_date | slice:0:4 }})</span>\r\n</li>"
 
 /***/ }),
 
@@ -579,7 +622,7 @@ module.exports = "@import url(https://fonts.googleapis.com/css?family=Roboto:400
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-md-6 offset-md-3\">\n      <div class=\"card bg-light mb-3\">\n        <div class=\"card-body\">\n          <div class=\"panel panel-login\">\n            <div class=\"panel-heading\">\n              <div class=\"row\">\n                <ul class=\"nav nav-pills nav-fill col-md-12 pr-0\">\n                  <li class=\"nav-item\">\n                    <a class=\"nav-link\" routerLink='/login' routerLinkActive='active'>Log In</a>\n                  </li>\n                  <li class=\"nav-item\">\n                    <a class=\"nav-link\" routerLink='/register' routerLinkActive='active'>Register</a>\n                  </li>\n                </ul>\n              </div>\n            </div>\n            <div class=\"panel-body mt-5\">\n              <div class=\"row\">\n                <div class=\"col-lg-12 p-0\">\n                  <router-outlet></router-outlet>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
+module.exports = "<div class=\"container\">\r\n  <div class=\"row\">\r\n    <div class=\"col-md-6 offset-md-3\">\r\n      <div class=\"card bg-light mb-3\">\r\n        <div class=\"card-body\">\r\n          <div class=\"panel panel-login\">\r\n            <div class=\"panel-heading\">\r\n              <div class=\"row\">\r\n                <ul class=\"nav nav-pills nav-fill col-md-12 pr-0\">\r\n                  <li class=\"nav-item\">\r\n                    <a class=\"nav-link\" routerLink='/login' routerLinkActive='active'>Log In</a>\r\n                  </li>\r\n                  <li class=\"nav-item\">\r\n                    <a class=\"nav-link\" routerLink='/register' routerLinkActive='active'>Register</a>\r\n                  </li>\r\n                </ul>\r\n              </div>\r\n            </div>\r\n            <div class=\"panel-body mt-5\">\r\n              <div class=\"row\">\r\n                <div class=\"col-lg-12 p-0\">\r\n                  <router-outlet></router-outlet>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -642,7 +685,7 @@ module.exports = ".btn-login {\r\n  background-color: #E8E9EC;\r\n  outline: non
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<form novalidate [formGroup]=\"loginForm\">\n  <div class=\"form-group\">\n    <input type=\"email\" tabindex=\"1\" formControlName=\"email\" class=\"form-control\" placeholder=\"Email Address\" pattern=\"^\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,3}$\">\n  </div>\n  <div *ngIf=\"loginForm.get('email').invalid && (loginForm.get('email').dirty || loginForm.get('email').touched)\" class=\"alert alert-danger\">\n    <div *ngIf=\"loginForm.get('email').errors.required\">\n      Email address is required.\n    </div>\n    <div *ngIf=\"loginForm.get('email').errors.pattern\">\n      Email address is not properly formatted.\n    </div>\n  </div>\n\n  <div class=\"form-group\">\n    <input type=\"password\" tabindex=\"2\" formControlName=\"password\" class=\"form-control\" placeholder=\"Password\">\n  </div>\n  <div *ngIf=\"loginForm.get('password').invalid && (loginForm.get('password').dirty || loginForm.get('password').touched)\"\n    class=\"alert alert-danger\">\n    <div *ngIf=\"loginForm.get('password').errors.required\">\n      Password is required.\n    </div>\n  </div>\n\n\n  <div class=\"col-sm-6 offset-sm-3\">\n    <input type=\"submit\" tabindex=\"3\" (click)=\"signInWithEmail()\" [disabled]=\"loginForm.invalid\" class=\"form-control btn btn-dark\"\n      value=\"LOG IN\">\n  </div>\n</form>"
+module.exports = "<form novalidate [formGroup]=\"loginForm\">\r\n  <div class=\"form-group\">\r\n    <input type=\"email\" tabindex=\"1\" formControlName=\"email\" class=\"form-control\" placeholder=\"Email Address\" pattern=\"^([\\w\\.\\-_]+)?\\w+@[\\w-_]+(\\.\\w+){1,}$\">\r\n  </div>\r\n  <div *ngIf=\"loginForm.get('email').invalid && (loginForm.get('email').dirty || loginForm.get('email').touched)\" class=\"alert alert-danger\">\r\n    <div *ngIf=\"loginForm.get('email').errors.required\">\r\n      Email address is required.\r\n    </div>\r\n    <div *ngIf=\"loginForm.get('email').errors.pattern\">\r\n      Email address is not properly formatted.\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"password\" tabindex=\"2\" formControlName=\"password\" class=\"form-control\" placeholder=\"Password\">\r\n  </div>\r\n  <div *ngIf=\"loginForm.get('password').invalid && (loginForm.get('password').dirty || loginForm.get('password').touched)\"\r\n    class=\"alert alert-danger\">\r\n    <div *ngIf=\"loginForm.get('password').errors.required\">\r\n      Password is required.\r\n    </div>\r\n  </div>\r\n\r\n\r\n  <div class=\"col-sm-6 offset-sm-3\">\r\n    <input type=\"submit\" tabindex=\"3\" (click)=\"signInWithEmail()\" [disabled]=\"loginForm.invalid\" class=\"form-control btn btn-dark\"\r\n      value=\"LOG IN\">\r\n  </div>\r\n</form>"
 
 /***/ }),
 
@@ -739,7 +782,7 @@ module.exports = ".btn-register {\r\n    background-color: #E8E9EC;\r\n    outli
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<form novalidate autocomplete=\"off\" [formGroup]=\"regForm\">\n  <div class=\"form-group\">\n    <input type=\"email\" tabindex=\"1\" formControlName=\"email\" class=\"form-control\" placeholder=\"Email Address\" pattern=\"^\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,3}$\">\n  </div>\n  <div *ngIf=\"regForm.get('email').invalid && (regForm.get('email').dirty || regForm.get('email').touched)\" class=\"alert alert-danger\">\n    <div *ngIf=\"regForm.get('email').errors.required\">\n      Email address is required.\n    </div>\n    <div *ngIf=\"regForm.get('email').errors.pattern\">\n      Email address is not properly formatted.\n    </div>\n  </div>\n\n  <div class=\"form-group\">\n    <input type=\"password\" tabindex=\"2\" formControlName=\"password\" class=\"form-control\" placeholder=\"Password\">\n  </div>\n  <div *ngIf=\"regForm.get('password').invalid && (regForm.get('password').dirty || regForm.get('password').touched)\" class=\"alert alert-danger\">\n    <div *ngIf=\"regForm.get('password').errors.required\">\n      Password is required.\n    </div>\n  </div>\n\n  <div class=\"col-sm-6 offset-sm-3\">\n    <input type=\"submit\" tabindex=\"3\" (click)=\"registerInWithEmail()\" [disabled]=\"regForm.invalid\" class=\"form-control btn btn-dark\"\n      value=\"REGISTER\">\n  </div>\n</form>"
+module.exports = "<form novalidate autocomplete=\"off\" [formGroup]=\"regForm\">\r\n  <div class=\"form-group\">\r\n    <input type=\"email\" tabindex=\"1\" formControlName=\"email\" class=\"form-control\" placeholder=\"Email Address\" pattern=\"^\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,3}$\">\r\n  </div>\r\n  <div *ngIf=\"regForm.get('email').invalid && (regForm.get('email').dirty || regForm.get('email').touched)\" class=\"alert alert-danger\">\r\n    <div *ngIf=\"regForm.get('email').errors.required\">\r\n      Email address is required.\r\n    </div>\r\n    <div *ngIf=\"regForm.get('email').errors.pattern\">\r\n      Email address is not properly formatted.\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"password\" tabindex=\"2\" formControlName=\"password\" class=\"form-control\" placeholder=\"Password\">\r\n  </div>\r\n  <div *ngIf=\"regForm.get('password').invalid && (regForm.get('password').dirty || regForm.get('password').touched)\" class=\"alert alert-danger\">\r\n    <div *ngIf=\"regForm.get('password').errors.required\">\r\n      Password is required.\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"col-sm-6 offset-sm-3\">\r\n    <input type=\"submit\" tabindex=\"3\" (click)=\"registerInWithEmail()\" [disabled]=\"regForm.invalid\" class=\"form-control btn btn-dark\"\r\n      value=\"REGISTER\">\r\n  </div>\r\n</form>"
 
 /***/ }),
 
@@ -818,7 +861,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-dark bg-primary\" style=\"margin-bottom: 25px\">\n  <!-- TODO: Add navigation links -->\n  <a class=\"navbar-brand\" href=\"#\">\n    Celebrity Name Game\n  </a>\n  <div class=\"form-inline my-2 my-lg-0\">\n    <button *ngIf=\"this.auth.isLoggedIn()\" class=\"btn btn-outline-light my-2 my-sm-0\" (click)=logout()>Logout</button>\n  </div>\n</nav>"
+module.exports = "<nav class=\"navbar navbar-dark bg-primary\" style=\"margin-bottom: 25px\">\r\n  <!-- TODO: Add navigation links -->\r\n  <a class=\"navbar-brand\" href=\"#\">\r\n    Celebrity Name\r\n  </a>\r\n  <!-- <div class=\"form-inline my-2 my-lg-0\">\r\n    <button *ngIf=\"this.auth.isLoggedIn()\" class=\"btn btn-outline-light my-2 my-sm-0\" (click)=logout()>Logout</button>\r\n    \r\n  </div> -->\r\n\r\n  <div class=\"btn-group\" *ngIf=\"this.auth.isLoggedIn()\">\r\n    <button class=\"btn btn-secondary btn-sm\" type=\"button\">\r\n      <span *ngIf=\"this.userService.getUserObj()\">{{this.getUserName()}}</span>\r\n    </button>\r\n    <button type=\"button\" class=\"btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split\" data-toggle=\"dropdown\" aria-haspopup=\"true\"\r\n      aria-expanded=\"false\">\r\n      <span class=\"sr-only\">Toggle Dropdown</span>\r\n    </button>\r\n    <div class=\"dropdown-menu\">\r\n      <a class=\"dropdown-item\" (click)=logout()>Logout</a>\r\n    </div>\r\n  </div>\r\n</nav>"
 
 /***/ }),
 
@@ -834,6 +877,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavigationComponent", function() { return NavigationComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _services_auth_auth_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/auth/auth.service */ "./src/app/services/auth/auth.service.ts");
+/* harmony import */ var _services_data_user_user_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/data/user/user.service */ "./src/app/services/data/user/user.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -845,14 +889,22 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
 var NavigationComponent = /** @class */ (function () {
-    function NavigationComponent(auth) {
+    function NavigationComponent(auth, userService) {
         this.auth = auth;
+        this.userService = userService;
     }
     NavigationComponent.prototype.logout = function () {
         this.auth.logout();
     };
     NavigationComponent.prototype.ngOnInit = function () {
+    };
+    NavigationComponent.prototype.getUserName = function () {
+        // console.log(this.userService.getUser());
+        this.user = this.userService.getUserObj();
+        if (this.user)
+            return this.user.name;
     };
     NavigationComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -860,7 +912,8 @@ var NavigationComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./navigation.component.html */ "./src/app/components/navigation/navigation.component.html"),
             styles: [__webpack_require__(/*! ./navigation.component.css */ "./src/app/components/navigation/navigation.component.css")]
         }),
-        __metadata("design:paramtypes", [_services_auth_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"]])
+        __metadata("design:paramtypes", [_services_auth_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"],
+            _services_data_user_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"]])
     ], NavigationComponent);
     return NavigationComponent;
 }());
@@ -976,6 +1029,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/index.js");
 /* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var _data_user_user_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../data/user/user.service */ "./src/app/services/data/user/user.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -990,16 +1044,21 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var AuthService = /** @class */ (function () {
-    function AuthService(_firebaseAuth, router, toastr) {
+    function AuthService(_firebaseAuth, router, toastr, userService) {
         var _this = this;
         this._firebaseAuth = _firebaseAuth;
         this.router = router;
         this.toastr = toastr;
+        this.userService = userService;
         this.userDetails = null;
         this.user = _firebaseAuth.authState;
         this.user.subscribe(function (user) {
             if (user) {
+                // console.log(user);
+                var uid = user.uid;
+                userService.getUser(uid);
                 _this.userDetails = user;
             }
             else {
@@ -1035,6 +1094,10 @@ var AuthService = /** @class */ (function () {
             return true;
         }
     };
+    AuthService.prototype.getUid = function () {
+        if (this.userDetails != null)
+            return this.userDetails.uid;
+    };
     AuthService.prototype.logout = function () {
         var _this = this;
         this._firebaseAuth.auth.signOut()
@@ -1044,7 +1107,8 @@ var AuthService = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
         __metadata("design:paramtypes", [angularfire2_auth__WEBPACK_IMPORTED_MODULE_2__["AngularFireAuth"],
             _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
-            ngx_toastr__WEBPACK_IMPORTED_MODULE_4__["ToastrService"]])
+            ngx_toastr__WEBPACK_IMPORTED_MODULE_4__["ToastrService"],
+            _data_user_user_service__WEBPACK_IMPORTED_MODULE_5__["UserService"]])
     ], AuthService);
     return AuthService;
 }());
@@ -1100,6 +1164,94 @@ var CastService = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/services/data/game/game.service.ts":
+/*!****************************************************!*\
+  !*** ./src/app/services/data/game/game.service.ts ***!
+  \****************************************************/
+/*! exports provided: GameService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GameService", function() { return GameService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var angularfire2_database__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! angularfire2/database */ "./node_modules/angularfire2/database/index.js");
+/* harmony import */ var _typed_hashmap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @typed/hashmap */ "./node_modules/@typed/hashmap/lib.es2015/index.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var GameService = /** @class */ (function () {
+    function GameService(firebase) {
+        this.firebase = firebase;
+    }
+    GameService.prototype.gameEntry = function (game) {
+        var ref = this.firebase.list('games');
+        var ans = new Array();
+        game.forEach(function (i) {
+            ans.push(i.id + ":" + i.name);
+        });
+        var key = ref.push({ ans: ans }).key;
+        return key;
+    };
+    GameService.prototype.getCorrectAnswers = function (key, selectedAnswers) {
+        var _this = this;
+        // Initialize variables
+        this.answers = new Array();
+        this.score = 0;
+        var ref = this.firebase.list('games');
+        ref.snapshotChanges().subscribe(function (item) {
+            item.forEach(function (element) {
+                if (element.key === key) {
+                    _this.correctAnswers = element.payload.toJSON();
+                    Object(_typed_hashmap__WEBPACK_IMPORTED_MODULE_2__["forEach"])(function (value, key) {
+                        var index = key;
+                        if (_this.correctAnswers.ans[index] == value) {
+                            _this.score++;
+                            // console.log(this.score);
+                        }
+                        _this.answers.push(key + ":" + (_this.correctAnswers.ans[index] == value));
+                    }, selectedAnswers);
+                    // this.answers.push(correct+":''");
+                    console.log(_this.answers, _this.score);
+                    // this.answers;
+                    // return score;
+                }
+            });
+        });
+        // TODO: add score to db
+        console.log('aa ' + this.score);
+    };
+    GameService.prototype.getFinalAnswers = function () {
+        return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])(this.answers);
+        // return this.getCorrectAnswers().subscribe(data => console.log('aa '+data)) ;
+    };
+    GameService.prototype.getFinalScore = function () {
+        return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])(this.score);
+    };
+    GameService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [angularfire2_database__WEBPACK_IMPORTED_MODULE_1__["AngularFireDatabase"]])
+    ], GameService);
+    return GameService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/services/data/movie/movie.service.ts":
 /*!******************************************************!*\
   !*** ./src/app/services/data/movie/movie.service.ts ***!
@@ -1141,6 +1293,65 @@ var MovieService = /** @class */ (function () {
         __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
     ], MovieService);
     return MovieService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/data/user/user.service.ts":
+/*!****************************************************!*\
+  !*** ./src/app/services/data/user/user.service.ts ***!
+  \****************************************************/
+/*! exports provided: UserService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserService", function() { return UserService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var angularfire2_database__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! angularfire2/database */ "./node_modules/angularfire2/database/index.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var UserService = /** @class */ (function () {
+    function UserService(firebase) {
+        this.firebase = firebase;
+    }
+    UserService.prototype.getUser = function (uid) {
+        var _this = this;
+        var ref = this.firebase.list('users');
+        ref.snapshotChanges().subscribe(function (item) {
+            item.forEach(function (element) {
+                if (element.key === uid) {
+                    _this.user = element.payload.toJSON();
+                    _this.user.key = element.key;
+                    return;
+                }
+            });
+        });
+    };
+    UserService.prototype.getUserObj = function () {
+        return this.user;
+    };
+    //TODO: create new user
+    UserService.prototype.insertUser = function (user) {
+    };
+    UserService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [angularfire2_database__WEBPACK_IMPORTED_MODULE_1__["AngularFireDatabase"]])
+    ], UserService);
+    return UserService;
 }());
 
 
