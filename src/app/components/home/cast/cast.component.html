@@ -1,4 +1,5 @@
-<div class="card h-100 d-inline-block" style="width: 18rem;">
+<div class="card h-100 d-inline-block" style="width: 18rem;" [ngClass]="(answers !== undefined && answers[index] !== undefined && index == answers[index].split(':')[0])? 
+answers[index].split(':')[1] : ''">
   <img class="card-img-top" src="{{image}}">
   <div class="card-body">
     <ul class="list-group" >

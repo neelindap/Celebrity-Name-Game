@@ -2,6 +2,7 @@
 const express = require('express');
 const path = require('path');
 const http = require('http');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 
 // Get our API routes
@@ -9,12 +10,15 @@ const api = require('./server/routes/api');
 
 const app = express();
 
+// cors middleware
+app.use(cors());
+
 // Parsers for POST data
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Point static path to dist
-app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, 'dist/celeb-name-game')));
 
 // Set our api routes
 app.use('/api', api);

@@ -4,6 +4,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
+import { UserService } from '../data/user/user.service';
 
 @Injectable()
 export class AuthService {
@@ -13,11 +14,15 @@ export class AuthService {
 
   constructor(private _firebaseAuth: AngularFireAuth, 
     private router: Router,
-    private toastr: ToastrService) {
+    private toastr: ToastrService,
+    private userService: UserService) {
     this.user = _firebaseAuth.authState;
     this.user.subscribe(
       (user) => {
         if (user) {
+          // console.log(user);
+          let uid = user.uid
+          userService.getUser(uid);
           this.userDetails = user;
         }
         else {
@@ -55,6 +60,11 @@ export class AuthService {
     } else {
       return true;
     }
+  }
+
+  getUid(){
+    if(this.userDetails != null)
+      return this.userDetails.uid;
   }
 
   logout() {
