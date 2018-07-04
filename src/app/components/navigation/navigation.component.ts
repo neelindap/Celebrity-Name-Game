@@ -25,11 +25,11 @@ export class NavigationComponent implements OnInit {
   ngOnInit() {
   }
 
-  getUserName() {
+  getUser() {
     // console.log(this.userService.getUser());
     this.user = this.userService.getUserObj();
     if(this.user)
-      return this.user.name;
+      return this.user;
   }
 
 }

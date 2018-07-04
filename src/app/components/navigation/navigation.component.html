@@ -20,10 +20,10 @@
 
     <ul class="navbar-nav">
       <div class="btn-group" *ngIf="this.auth.isLoggedIn()">
-        <button class="btn btn-secondary btn-sm" type="button">
-          <span *ngIf="this.userService.getUserObj()">Welcome, {{this.getUserName()}}</span>
+        <button class="btn btn-primary btn-sm" type="button">
+          <span *ngIf="this.userService.getUserObj()">Welcome, {{this.getUser().name}} <span class="badge badge-light">{{this.getUser().score}}</span> </span>
         </button>
-        <button type="button" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true"
+        <button type="button" class="btn btn-sm btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true"
           aria-expanded="false">
           <span class="sr-only">Toggle Dropdown</span>
         </button>

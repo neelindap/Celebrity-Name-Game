@@ -11,7 +11,7 @@ import { UserService } from '../../services/data/user/user.service';
 import { Observable } from 'rxjs';
 
 // import fade in animation
-import { fadeInAnimation, staggerAnimation } from '../../animations'
+import { fadeInAnimation } from '../../animations'
 
 @Component({
   selector: 'app-home',
@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit {
   // Correct Answers
   private answered: boolean = false;
   private answers: any[];
-  private score: Observable<number>;
+  private score: any;
 
   constructor(private fb: FormBuilder,
     private movieService: MovieService,
@@ -181,28 +181,20 @@ export class HomeComponent implements OnInit {
     // get correct answers
     this.gameService.getCorrectAnswers(key, this.selectedAnswers);
 
-    // check answers
-    this.checkFinalAnswers();
+    // Subscribe to answers
+    var answersObserver = this.gameService.subject.subscribe(
+      (data: any[]) => {
+        this.answers = data;
+      }
+    )
 
-    // get final score
-    this.getFinalScore();
+    // subscribe to score
+    var scoreObserver = this.userService.subject.subscribe(
+      (data) => {
+        this.score = data;
+      });
 
     this.answered = true;
-  }
-
-  checkFinalAnswers() {
-    this.gameService.getFinalAnswers().subscribe(data => {
-      console.log('aa ' + data);
-      this.answers = data;
-    });
-
-  }
-
-  getFinalScore() {
-    this.userService.getFinalScore().subscribe(s => {
-      console.log('aaa ' + s);
-      this.score = s;
-    });
   }
 
 }
