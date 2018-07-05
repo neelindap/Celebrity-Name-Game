@@ -8,9 +8,12 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 
+// Extras
 import { environment } from './../environments/environment';
 import { appRoutes } from './routes';
 import { ToastrModule } from 'ngx-toastr';
+import { DataTablesModule } from 'angular-datatables';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 // Firebase
 import { AngularFireModule } from 'angularfire2';
@@ -34,6 +37,9 @@ import { MovieComponent } from './components/home/movie/movie.component';
 import { CastComponent } from './components/home/cast/cast.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LeaderboardComponent } from './components/leaderboard/leaderboard.component';
+import { ErrorComponent } from './components/error/error.component';
+import { TableComponent } from './components/leaderboard/table/table.component';
+import { ChartComponent } from './components/leaderboard/chart/chart.component';
 
 
 @NgModule({
@@ -47,7 +53,10 @@ import { LeaderboardComponent } from './components/leaderboard/leaderboard.compo
     MovieComponent,
     CastComponent,
     FooterComponent,
-    LeaderboardComponent
+    LeaderboardComponent,
+    ErrorComponent,
+    TableComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +69,9 @@ import { LeaderboardComponent } from './components/leaderboard/leaderboard.compo
     RouterModule.forRoot(appRoutes),
     CommonModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    DataTablesModule,
+    NgxChartsModule
   ],
   providers: [AuthService,
     AuthGuardService,

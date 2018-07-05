@@ -1,3 +1,21 @@
-<p>
-  leaderboard works!
-</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 ">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title pb-2">Leaderboard Table</h5>
+          <app-table [scores]="scores"></app-table>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title pb-2">Leaderboard Chart</h5>
+          <app-chart [scores]="scores"></app-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

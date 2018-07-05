@@ -22,8 +22,6 @@ export class UserService {
   constructor(private firebase: AngularFireDatabase) {
     // Ref to firebase db -> users
     this.ref = this.firebase.list('users');
-
-    this.getUsersScores();
   }
 
   // Get logged in user details (not used)
@@ -66,43 +64,30 @@ export class UserService {
 
   // Leaderboard
   getUsersScores() {
-    // var items = this.ref.snapshotChanges().pipe(
-    //   map((item:any) => {
-    //     console.log(item);
-    //     item.sort((a, b) => {return a.score - b.score})
-    //   })
-    // );
-    // }
-
     var score = new Array();
     var items = this.firebase.list('users', (re: any) => {
-      // query: {
-      //   orderByChild: 'score'
-      // }
       let q = re.orderByChild('score');
-      console.log(q);
       return q;
     });
 
     items.snapshotChanges().subscribe(item => {
-      console.log(item);
-      this.scoreSubject.next(item);
-      // item.forEach(element => {
-        
-      //   if (element) {
-      //     // let user = element.payload.toJSON() as any;
-      //     // let json = {
-      //     //   name: user.name,
-      //     //   score: user.score
-      //     // }
-      //     // score.push(json);
-      //     this.scoreSubject.next(element.payload.toJSON());
-      //     console.log(element.payload.toJSON())
-      //   }
-      // })
-    });
+      // console.log(item);
+      item.forEach(element => {
 
-    
+        if (element) {
+          let user = element.payload.toJSON() as any;
+          let json = {
+            name: user.name,
+            value: user.score
+          }
+          score.push(json);
+        }
+      });
+
+      // Reverse array as Firebase doesn't provide descending sorting order
+      score = score.reverse();
+      this.scoreSubject.next(score);
+    });
 
     // var a = score.reverse();
     // console.log(score[0]);
