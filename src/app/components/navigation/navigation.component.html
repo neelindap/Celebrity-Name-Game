@@ -1,23 +1,36 @@
-<nav class="navbar navbar-dark bg-primary" style="margin-bottom: 25px">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="margin-bottom: 25px">
   <!-- TODO: Add navigation links -->
-  <a class="navbar-brand" href="#">
+  <span class="navbar-brand">
     Celebrity Name
-  </a>
-  <!-- <div class="form-inline my-2 my-lg-0">
-    <button *ngIf="this.auth.isLoggedIn()" class="btn btn-outline-light my-2 my-sm-0" (click)=logout()>Logout</button>
-    
-  </div> -->
+  </span>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-  <div class="btn-group" *ngIf="this.auth.isLoggedIn()">
-    <button class="btn btn-secondary btn-sm" type="button">
-      <span *ngIf="this.userService.getUserObj()">{{this.getUserName()}}</span>
-    </button>
-    <button type="button" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true"
-      aria-expanded="false">
-      <span class="sr-only">Toggle Dropdown</span>
-    </button>
-    <div class="dropdown-menu">
-      <a class="dropdown-item" (click)=logout()>Logout</a>
-    </div>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto" *ngIf="this.authService.isLoggedIn()">
+      <li class="nav-item">
+        <a class="nav-link" routerLink='/home' routerLinkActive='active'>Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink='/leaderboard' routerLinkActive='active'>LeaderBoard</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav">
+      <div class="btn-group" *ngIf="this.authService.isLoggedIn()">
+        <button class="btn btn-primary btn-sm" type="button">
+          <span *ngIf="this.user">Welcome, {{this.user.name}} <span class="badge badge-light">{{this.user.score}} points</span> </span>
+        </button>
+        <button type="button" class="btn btn-sm btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" (click)=logout()>Logout</a>
+        </div>
+      </div>
+    </ul>
   </div>
 </nav>

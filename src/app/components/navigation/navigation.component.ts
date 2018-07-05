@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth/auth.service';
-import { UserService } from '../../services/data/user/user.service';
 import { User } from '../../models/user.model';
+import { UserService } from '../../services/data/user/user.service';
 
 @Component({
   selector: 'app-navigation',
@@ -12,24 +12,32 @@ import { User } from '../../models/user.model';
 export class NavigationComponent implements OnInit {
 
   private user: User;
-  
-  constructor(private auth: AuthService,
-    private userService: UserService) {
+  private userObserver;
+
+  constructor(private authService: AuthService,
+  private userService: UserService) {
 
   }
 
   logout() {
-    this.auth.logout();
+    this.authService.logout();
+    // this.userObserver.unsubscribe();
   }
 
   ngOnInit() {
-  }
-
-  getUserName() {
-    // console.log(this.userService.getUser());
-    this.user = this.userService.getUserObj();
-    if(this.user)
-      return this.user.name;
+    // subscribe to score
+    // console.log('aaaaa');
+    this.user = new User();
+    this.userObserver = this.userService.userSubject.subscribe(
+      (userCast: any) => {
+        if (userCast != undefined) {
+          this.user.uid = userCast.uid;
+          this.user.name = userCast.name;
+          this.user.email = userCast.email;
+          this.user.score = userCast.score;
+          // console.log(this.user);
+        }
+      });
   }
 
 }

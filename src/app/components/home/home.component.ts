@@ -7,11 +7,20 @@ import { GameService } from '../../services/data/game/game.service';
 import { ToastrService } from 'ngx-toastr';
 
 import { empty, size, set } from '@typed/hashmap';
+import { UserService } from '../../services/data/user/user.service';
+
+// import fade in animation
+import { fadeInAnimation } from '../../animations'
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  // make fade in animation available to this component
+  animations: [fadeInAnimation],
+
+  // attach the fade in animation to the host (root) element of this component
+  host: { '[@fadeInAnimation]': '' }
 })
 export class HomeComponent implements OnInit {
 
@@ -40,6 +49,7 @@ export class HomeComponent implements OnInit {
     private movieService: MovieService,
     private castService: CastService,
     private gameService: GameService,
+    private userService: UserService,
     private toastr: ToastrService) {
 
     // Initialize form
@@ -58,6 +68,7 @@ export class HomeComponent implements OnInit {
     this.answered = false;
     this.answers = [];
     this.castPresent = false;
+    this.selectedAnswers = empty<number, string>();
 
     const movieTitle = this.movieForm.value.title;
     if (movieTitle.length >= 3) {
@@ -80,9 +91,11 @@ export class HomeComponent implements OnInit {
 
   // Trigger game start after movie selection -> Hide the autocomplete box and update textbox
   gameStarted(title: string) {
-    // console.log('gameStarted '+title);
     this.movieForm.get('title').setValue(title);
     this.moviesPresent = false;
+
+    // Unsubscribe from game service
+    this.gameService.unsubscriveFromObject();
   }
 
   // GET MOVIE CAST
@@ -152,7 +165,6 @@ export class HomeComponent implements OnInit {
 
   // Submit answers
   submitAnswers(key: string) {
-
     //Check if all answers are submitted. If not confirm box
     let submitted = size(this.selectedAnswers);
 
@@ -168,26 +180,20 @@ export class HomeComponent implements OnInit {
     // get correct answers
     this.gameService.getCorrectAnswers(key, this.selectedAnswers);
 
-    // check answers
-    this.checkFinalAnswers();
+    // Subscribe to answers
+    var answersObserver = this.gameService.subject.subscribe(
+      (data: any[]) => {
+        this.answers = data;
+      }
+    )
 
-    // get final score
-    this.getFinalScore();
+    // subscribe to score
+    var scoreObserver = this.userService.subject.subscribe(
+      (data) => {
+        this.score = data;
+      });
 
     this.answered = true;
-  }
-
-  checkFinalAnswers() {
-    this.gameService.getFinalAnswers().subscribe(data => {
-      this.answers = data;
-    });
-
-  }
-
-  getFinalScore() {
-    this.gameService.getFinalScore().subscribe(s => {
-      this.score = s;
-    });
   }
 
 }

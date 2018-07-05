@@ -10,9 +10,9 @@ export class AuthGuard implements CanActivate {
         if (this.authService.isLoggedIn()) {
             return true;
         }
-        this.toastr.error('You\'re not logged in', 'Error', {
-            timeOut: 3000,
-        });
+        // this.toastr.error('You\'re not logged in', 'Error', {
+        //     timeOut: 3000,
+        // });
         this.router.navigate(['/']);
         return false;
     }

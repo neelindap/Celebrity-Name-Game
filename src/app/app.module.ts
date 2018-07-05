@@ -32,6 +32,8 @@ import { LoginComponent } from './components/landing/login/login.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { MovieComponent } from './components/home/movie/movie.component';
 import { CastComponent } from './components/home/cast/cast.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { LeaderboardComponent } from './components/leaderboard/leaderboard.component';
 
 
 @NgModule({
@@ -43,7 +45,9 @@ import { CastComponent } from './components/home/cast/cast.component';
     LoginComponent,
     NavigationComponent,
     MovieComponent,
-    CastComponent
+    CastComponent,
+    FooterComponent,
+    LeaderboardComponent
   ],
   imports: [
     BrowserModule,
@@ -58,12 +62,13 @@ import { CastComponent } from './components/home/cast/cast.component';
     BrowserAnimationsModule,
     ToastrModule.forRoot()
   ],
-  providers: [AuthService, 
-    AuthGuard, 
+  providers: [AuthService,
+    AuthGuard,
     MovieService,
     UserService,
-    GameService    
+    GameService
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
