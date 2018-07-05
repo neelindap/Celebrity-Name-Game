@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../../../services/auth/auth.service';
+import { MatchPasswords } from '../../../form.validations';
 
 @Component({
   selector: 'app-register',
@@ -11,12 +12,13 @@ export class RegisterComponent implements OnInit {
 
   public regForm: FormGroup;
 
-  constructor(private fb: FormBuilder, 
-              private auth: AuthService) {
+  constructor(private fb: FormBuilder,
+    private auth: AuthService) {
     this.regForm = this.fb.group({
-      email:['', Validators.required],
-      password:['', Validators.required],
-      fullname:['', Validators.required]
+      email: ['', Validators.required],
+      password: ['', Validators.required],
+      confirmPassword: ['', [Validators.required, MatchPasswords]],
+      fullname: ['', Validators.required],
     })
   }
 
@@ -31,5 +33,4 @@ export class RegisterComponent implements OnInit {
 
     this.auth.signUpWithEmail(email, password, name);
   }
-
 }
