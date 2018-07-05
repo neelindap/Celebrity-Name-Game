@@ -25,14 +25,14 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  // TODO : Validations
+  // Sign in
   signInWithEmail() {
     this.authService.signInRegular(this.loginForm.value.email, this.loginForm.value.password)
       .then((res) => {
         // console.log(res);
         this.router.navigate(['home']);
       })
-      // TODO: Proper error messages
+      // Error messages
       .catch((err) => {
         // console.log('error: ' + err)
         this.toastr.error('You\'ve entered invalid credentials', 'Invalid credentials', {

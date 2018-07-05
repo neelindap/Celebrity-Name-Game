@@ -19,7 +19,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 // Services
 import { AuthService } from './services/auth/auth.service';
-import { AuthGuard } from './services/auth/auth-guard.service';
+import { AuthGuardService } from './services/auth/auth-guard.service';
 import { MovieService } from './services/data/movie/movie.service';
 import { UserService } from './services/data/user/user.service';
 import { GameService } from './services/data/game/game.service';
@@ -63,7 +63,7 @@ import { LeaderboardComponent } from './components/leaderboard/leaderboard.compo
     ToastrModule.forRoot()
   ],
   providers: [AuthService,
-    AuthGuard,
+    AuthGuardService,
     MovieService,
     UserService,
     GameService
