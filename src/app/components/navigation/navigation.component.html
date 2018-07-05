@@ -1,5 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="margin-bottom: 25px">
-  <!-- TODO: Add navigation links -->
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark" style="margin-bottom: 25px">
   <span class="navbar-brand">
     Celebrity Name
   </span>
@@ -8,6 +7,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
+  <!-- navigation links -->
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto" *ngIf="this.authService.isLoggedIn()">
       <li class="nav-item">
@@ -21,7 +21,9 @@
     <ul class="navbar-nav">
       <div class="btn-group" *ngIf="this.authService.isLoggedIn()">
         <button class="btn btn-primary btn-sm" type="button">
-          <span *ngIf="this.user">Welcome, {{this.user.name}} <span class="badge badge-light">{{this.user.score}} points</span> </span>
+          <span *ngIf="this.user">Welcome, {{this.user.name}}
+            <span class="badge badge-light">{{this.user.score}} points</span>
+          </span>
         </button>
         <button type="button" class="btn btn-sm btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true"
           aria-expanded="false">

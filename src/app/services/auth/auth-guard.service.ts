@@ -4,7 +4,7 @@ import { Router, CanActivate } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
 @Injectable()
-export class AuthGuard implements CanActivate {
+export class AuthGuardService implements CanActivate {
     constructor(private router: Router, private authService: AuthService, private toastr: ToastrService) { }
     canActivate() {
         if (this.authService.isLoggedIn()) {

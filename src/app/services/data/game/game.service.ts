@@ -73,6 +73,7 @@ export class GameService {
           // Update score in db
           this.userService.updateUser(score);
 
+          // console.log(answers);
           // Emit answers object to subscribers
           this.subject.next(answers);
         }

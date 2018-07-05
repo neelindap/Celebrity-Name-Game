@@ -15,7 +15,7 @@ export class NavigationComponent implements OnInit {
   private userObserver;
 
   constructor(private authService: AuthService,
-  private userService: UserService) {
+    private userService: UserService) {
 
   }
 
@@ -26,7 +26,6 @@ export class NavigationComponent implements OnInit {
 
   ngOnInit() {
     // subscribe to score
-    // console.log('aaaaa');
     this.user = new User();
     this.userObserver = this.userService.userSubject.subscribe(
       (userCast: any) => {
@@ -35,7 +34,6 @@ export class NavigationComponent implements OnInit {
           this.user.name = userCast.name;
           this.user.email = userCast.email;
           this.user.score = userCast.score;
-          // console.log(this.user);
         }
       });
   }
