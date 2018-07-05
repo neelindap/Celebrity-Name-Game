@@ -23,6 +23,52 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
+/***/ "./src/app/animations.ts":
+/*!*******************************!*\
+  !*** ./src/app/animations.ts ***!
+  \*******************************/
+/*! exports provided: fadeInAnimation, staggerAnimation */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fadeInAnimation", function() { return fadeInAnimation; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staggerAnimation", function() { return staggerAnimation; });
+/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
+// import the required animation functions from the angular animations module
+
+var fadeInAnimation = 
+// trigger name for attaching this animation to an element using the [@triggerName] syntax
+Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["trigger"])('fadeInAnimation', [
+    // route 'enter' transition
+    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["transition"])('* <=> *', [
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(':enter', [
+            // css styles at start of transition
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ opacity: 0 }),
+            // animation and styles at end of transition
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])('50ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ opacity: 1 }))
+        ], { optional: true }),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(':leave', [
+            // animation and styles at end of transition
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])('50ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ opacity: 0 }))
+        ], { optional: true }),
+    ]),
+]);
+var staggerAnimation = Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["trigger"])('staggerAnimation', [
+    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["transition"])('* <=> *', [
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(':enter', [
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ opacity: 0, transform: 'translateY(-15px)' }),
+            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["stagger"])('50ms', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])('550ms ease-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ opacity: 1, transform: 'translateY(0px)' })))
+        ], { optional: true }),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["query"])(':leave', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])('50ms', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ opacity: 0 })), {
+            optional: true
+        })
+    ])
+]);
+
+
+/***/ }),
+
 /***/ "./src/app/app.component.css":
 /*!***********************************!*\
   !*** ./src/app/app.component.css ***!
@@ -30,7 +76,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100,700,500);"
+module.exports = ""
 
 /***/ }),
 
@@ -41,7 +87,7 @@ module.exports = "@import url(https://fonts.googleapis.com/css?family=Roboto:400
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-navigation></app-navigation>\r\n<router-outlet></router-outlet>"
+module.exports = "<app-navigation></app-navigation>\r\n<router-outlet></router-outlet>\r\n<app-footer></app-footer>"
 
 /***/ }),
 
@@ -116,6 +162,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_navigation_navigation_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/navigation/navigation.component */ "./src/app/components/navigation/navigation.component.ts");
 /* harmony import */ var _components_home_movie_movie_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/home/movie/movie.component */ "./src/app/components/home/movie/movie.component.ts");
 /* harmony import */ var _components_home_cast_cast_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/home/cast/cast.component */ "./src/app/components/home/cast/cast.component.ts");
+/* harmony import */ var _components_footer_footer_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/footer/footer.component */ "./src/app/components/footer/footer.component.ts");
+/* harmony import */ var _components_leaderboard_leaderboard_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/leaderboard/leaderboard.component */ "./src/app/components/leaderboard/leaderboard.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -152,6 +200,8 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -165,7 +215,9 @@ var AppModule = /** @class */ (function () {
                 _components_landing_login_login_component__WEBPACK_IMPORTED_MODULE_22__["LoginComponent"],
                 _components_navigation_navigation_component__WEBPACK_IMPORTED_MODULE_23__["NavigationComponent"],
                 _components_home_movie_movie_component__WEBPACK_IMPORTED_MODULE_24__["MovieComponent"],
-                _components_home_cast_cast_component__WEBPACK_IMPORTED_MODULE_25__["CastComponent"]
+                _components_home_cast_cast_component__WEBPACK_IMPORTED_MODULE_25__["CastComponent"],
+                _components_footer_footer_component__WEBPACK_IMPORTED_MODULE_26__["FooterComponent"],
+                _components_leaderboard_leaderboard_component__WEBPACK_IMPORTED_MODULE_27__["LeaderboardComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -190,6 +242,69 @@ var AppModule = /** @class */ (function () {
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/footer/footer.component.css":
+/*!********************************************************!*\
+  !*** ./src/app/components/footer/footer.component.css ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/footer/footer.component.html":
+/*!*********************************************************!*\
+  !*** ./src/app/components/footer/footer.component.html ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<!-- Footer -->\n<footer class=\"page-footer footer font-small bg-primary\">\n\n  <!-- Copyright -->\n  <div class=\"footer-copyright text-center py-3 bg-dark text-white\">© 2018 Copyright:\n    <a href=\"http://www.neelindap.com/\" class=\"alert-link\" target=\"_blank\"> Neel Indap</a>\n  </div>\n  <!-- Copyright -->\n\n</footer>\n<!-- Footer -->"
+
+/***/ }),
+
+/***/ "./src/app/components/footer/footer.component.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/components/footer/footer.component.ts ***!
+  \*******************************************************/
+/*! exports provided: FooterComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FooterComponent", function() { return FooterComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var FooterComponent = /** @class */ (function () {
+    function FooterComponent() {
+    }
+    FooterComponent.prototype.ngOnInit = function () {
+    };
+    FooterComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-footer',
+            template: __webpack_require__(/*! ./footer.component.html */ "./src/app/components/footer/footer.component.html"),
+            styles: [__webpack_require__(/*! ./footer.component.css */ "./src/app/components/footer/footer.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], FooterComponent);
+    return FooterComponent;
 }());
 
 
@@ -316,7 +431,7 @@ module.exports = "ul {\r\n    list-style-type: none;\r\n  }\r\n\r\n  .loader {\r
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\r\n  <div class=\"row\">\r\n    <div class=\"offset-md-2 col-md-8\">\r\n      <div class=\"card\">\r\n        <div class=\"card-body\">\r\n          <h5 class=\"card-title\">Search for a movie title</h5>\r\n          <form class=\"form-inline\" novalidate [formGroup]=\"movieForm\">\r\n            <input class=\"form-control col-md-12\" [ngModel]=\"title\" (keyup)=\"searchMovie()\" formControlName=\"title\" type=\"search\" placeholder=\"Enter movie's name\">\r\n            <div class=\"col-md-12\" *ngIf=\"moviesPresent\">\r\n              <ul class=\"list-group\">\r\n                <app-movie *ngFor=\"let movie of movies\" [movie]=\"movie\" (gameStarted)=\"gameStarted($event)\" (findCast)=\"findCast($event)\"></app-movie>\r\n              </ul>\r\n            </div>\r\n          </form>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"loader m-auto\" *ngIf=\"castLoading\"></div>\r\n\r\n  <div class=\"row mt-5\" *ngIf=\"castPresent\">\r\n    <div class=\"col-md-12\">\r\n      <div class=\"card\">\r\n        <div class=\"card-header font-weight-bold\">Naming celebrities from {{movieForm.get('title').value}}</div>\r\n        <div class=\"card-body\">\r\n          <div class=\"container-fluid\">\r\n            <div class=\"row\">\r\n              <div class=\"col-md-12\">\r\n                <div class=\"card-group\">\r\n                  <app-cast class=\"mx-auto my-4\" *ngFor=\"let member of cast; let i=index\" [index]=\"i\" [cast]=\"member\" [castNames]=\"castNames\"\r\n                    (addToMap)=\"addToMap($event)\" [answers]=\"answers\"></app-cast>\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"row\">\r\n              <div class=\"col-md-2 offset-md-5\" *ngIf=\"!answered\">\r\n                <button type=\"button\" class=\"btn btn-success btn-block\" (click)=\"submitAnswers(this.key)\">SUBMIT</button>\r\n              </div>\r\n            </div>\r\n            <div class=\"row\">\r\n              <div class=\"col-md-2 offset-md-5\" *ngIf=\"answered\">\r\n                <div class=\"alert alert-success alert-dismissible fade show\" role=\"alert\">\r\n                  You got {{score | async}} answers correct!\r\n                  <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\r\n                    <span aria-hidden=\"true\">&times;</span>\r\n                  </button>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>"
+module.exports = "<div class=\"container-fluid\">\r\n  <div class=\"row\">\r\n    <div class=\"offset-md-2 col-md-8\">\r\n      <div class=\"card\">\r\n        <div class=\"card-body\">\r\n          <h5 class=\"card-title\">Search for a movie title</h5>\r\n          <form class=\"form-inline\" novalidate [formGroup]=\"movieForm\">\r\n            <input class=\"form-control col-md-12\" [ngModel]=\"title\" (keyup)=\"searchMovie()\" formControlName=\"title\" type=\"search\" placeholder=\"Enter movie's name\">\r\n            <div class=\"col-md-12\" *ngIf=\"moviesPresent\">\r\n              <ul class=\"list-group\">\r\n                <app-movie *ngFor=\"let movie of movies\" [movie]=\"movie\" (gameStarted)=\"gameStarted($event)\" (findCast)=\"findCast($event)\"></app-movie>\r\n              </ul>\r\n            </div>\r\n          </form>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"loader m-auto\" *ngIf=\"castLoading\"></div>\r\n\r\n  <!-- TODO : No results found-->\r\n\r\n  <div class=\"row mt-5\" *ngIf=\"castPresent\">\r\n    <div class=\"col-md-12\">\r\n      <div class=\"card\">\r\n        <div class=\"card-header font-weight-bold\">Naming celebrities from {{movieForm.get('title').value}}</div>\r\n        <div class=\"card-body\">\r\n          <div class=\"container-fluid\">\r\n            <div class=\"row\">\r\n              <div class=\"col-md-12\">\r\n                <div class=\"card-group\">\r\n                  <app-cast class=\"mx-auto my-4\" *ngFor=\"let member of cast; let i=index\" [index]=\"i\" [cast]=\"member\" [castNames]=\"castNames\"\r\n                    (addToMap)=\"addToMap($event)\" [answers]=\"answers\"></app-cast>\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"row\">\r\n              <div class=\"col-md-2 offset-md-5\" *ngIf=\"!answered\">\r\n                <button type=\"button\" class=\"btn btn-success btn-block\" (click)=\"submitAnswers(this.key)\">SUBMIT</button>\r\n              </div>\r\n            </div>\r\n            <div class=\"row\">\r\n              <div class=\"col-md-4 offset-md-4\" *ngIf=\"answered\">\r\n                <div *ngIf=\"score === 0 then zeroScore; else nonZeroScore\"></div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<ng-template #zeroScore>\r\n  <div class=\"alert alert-danger alert-dismissible fade show text-center\" role=\"alert\">\r\n    Unfortunately, you scored 0 on this round.\r\n    <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n    </button>\r\n  </div>\r\n</ng-template>\r\n\r\n<ng-template #nonZeroScore>\r\n  <div class=\"alert alert-success alert-dismissible fade show text-center\" role=\"alert\">\r\n    You got {{score}} answer(s) correct!\r\n    <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n    </button>\r\n  </div>\r\n</ng-template>"
 
 /***/ }),
 
@@ -337,6 +452,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_data_game_game_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/data/game/game.service */ "./src/app/services/data/game/game.service.ts");
 /* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
 /* harmony import */ var _typed_hashmap__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @typed/hashmap */ "./node_modules/@typed/hashmap/lib.es2015/index.js");
+/* harmony import */ var _services_data_user_user_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../services/data/user/user.service */ "./src/app/services/data/user/user.service.ts");
+/* harmony import */ var _animations__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../animations */ "./src/app/animations.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -353,12 +470,16 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+// import fade in animation
+
 var HomeComponent = /** @class */ (function () {
-    function HomeComponent(fb, movieService, castService, gameService, toastr) {
+    function HomeComponent(fb, movieService, castService, gameService, userService, toastr) {
         this.fb = fb;
         this.movieService = movieService;
         this.castService = castService;
         this.gameService = gameService;
+        this.userService = userService;
         this.toastr = toastr;
         this.moviesPresent = false;
         // Cast
@@ -385,6 +506,7 @@ var HomeComponent = /** @class */ (function () {
         this.answered = false;
         this.answers = [];
         this.castPresent = false;
+        this.selectedAnswers = Object(_typed_hashmap__WEBPACK_IMPORTED_MODULE_6__["empty"])();
         var movieTitle = this.movieForm.value.title;
         if (movieTitle.length >= 3) {
             this.movieService.searchMovie(movieTitle).subscribe(function (movies) {
@@ -404,9 +526,10 @@ var HomeComponent = /** @class */ (function () {
     };
     // Trigger game start after movie selection -> Hide the autocomplete box and update textbox
     HomeComponent.prototype.gameStarted = function (title) {
-        // console.log('gameStarted '+title);
         this.movieForm.get('title').setValue(title);
         this.moviesPresent = false;
+        // Unsubscribe from game service
+        this.gameService.unsubscriveFromObject();
     };
     // GET MOVIE CAST
     HomeComponent.prototype.findCast = function (movieId) {
@@ -466,6 +589,7 @@ var HomeComponent = /** @class */ (function () {
     };
     // Submit answers
     HomeComponent.prototype.submitAnswers = function (key) {
+        var _this = this;
         //Check if all answers are submitted. If not confirm box
         var submitted = Object(_typed_hashmap__WEBPACK_IMPORTED_MODULE_6__["size"])(this.selectedAnswers);
         // Uncomment later
@@ -477,34 +601,31 @@ var HomeComponent = /** @class */ (function () {
         // }
         // get correct answers
         this.gameService.getCorrectAnswers(key, this.selectedAnswers);
-        // check answers
-        this.checkFinalAnswers();
-        // get final score
-        this.getFinalScore();
-        this.answered = true;
-    };
-    HomeComponent.prototype.checkFinalAnswers = function () {
-        var _this = this;
-        this.gameService.getFinalAnswers().subscribe(function (data) {
+        // Subscribe to answers
+        var answersObserver = this.gameService.subject.subscribe(function (data) {
             _this.answers = data;
         });
-    };
-    HomeComponent.prototype.getFinalScore = function () {
-        var _this = this;
-        this.gameService.getFinalScore().subscribe(function (s) {
-            _this.score = s;
+        // subscribe to score
+        var scoreObserver = this.userService.subject.subscribe(function (data) {
+            _this.score = data;
         });
+        this.answered = true;
     };
     HomeComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-home',
             template: __webpack_require__(/*! ./home.component.html */ "./src/app/components/home/home.component.html"),
-            styles: [__webpack_require__(/*! ./home.component.css */ "./src/app/components/home/home.component.css")]
+            styles: [__webpack_require__(/*! ./home.component.css */ "./src/app/components/home/home.component.css")],
+            // make fade in animation available to this component
+            animations: [_animations__WEBPACK_IMPORTED_MODULE_8__["fadeInAnimation"]],
+            // attach the fade in animation to the host (root) element of this component
+            host: { '[@fadeInAnimation]': '' }
         }),
         __metadata("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"],
             _services_data_movie_movie_service__WEBPACK_IMPORTED_MODULE_2__["MovieService"],
             _services_data_cast_cast_service__WEBPACK_IMPORTED_MODULE_3__["CastService"],
             _services_data_game_game_service__WEBPACK_IMPORTED_MODULE_4__["GameService"],
+            _services_data_user_user_service__WEBPACK_IMPORTED_MODULE_7__["UserService"],
             ngx_toastr__WEBPACK_IMPORTED_MODULE_5__["ToastrService"]])
     ], HomeComponent);
     return HomeComponent;
@@ -547,6 +668,7 @@ module.exports = "<!-- <div class=\"card h-100 d-inline-block\" style=\"width: 1
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MovieComponent", function() { return MovieComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _animations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../animations */ "./src/app/animations.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -556,6 +678,8 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
+// import fade in animation
 
 var MovieComponent = /** @class */ (function () {
     function MovieComponent() {
@@ -593,7 +717,9 @@ var MovieComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-movie',
             template: __webpack_require__(/*! ./movie.component.html */ "./src/app/components/home/movie/movie.component.html"),
-            styles: [__webpack_require__(/*! ./movie.component.css */ "./src/app/components/home/movie/movie.component.css")]
+            styles: [__webpack_require__(/*! ./movie.component.css */ "./src/app/components/home/movie/movie.component.css")],
+            animations: [_animations__WEBPACK_IMPORTED_MODULE_1__["staggerAnimation"]],
+            host: { '[@staggerAnimation]': '' }
         }),
         __metadata("design:paramtypes", [])
     ], MovieComponent);
@@ -782,7 +908,7 @@ module.exports = ".btn-register {\r\n    background-color: #E8E9EC;\r\n    outli
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<form novalidate autocomplete=\"off\" [formGroup]=\"regForm\">\r\n  <div class=\"form-group\">\r\n    <input type=\"email\" tabindex=\"1\" formControlName=\"email\" class=\"form-control\" placeholder=\"Email Address\" pattern=\"^\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,3}$\">\r\n  </div>\r\n  <div *ngIf=\"regForm.get('email').invalid && (regForm.get('email').dirty || regForm.get('email').touched)\" class=\"alert alert-danger\">\r\n    <div *ngIf=\"regForm.get('email').errors.required\">\r\n      Email address is required.\r\n    </div>\r\n    <div *ngIf=\"regForm.get('email').errors.pattern\">\r\n      Email address is not properly formatted.\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"password\" tabindex=\"2\" formControlName=\"password\" class=\"form-control\" placeholder=\"Password\">\r\n  </div>\r\n  <div *ngIf=\"regForm.get('password').invalid && (regForm.get('password').dirty || regForm.get('password').touched)\" class=\"alert alert-danger\">\r\n    <div *ngIf=\"regForm.get('password').errors.required\">\r\n      Password is required.\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"col-sm-6 offset-sm-3\">\r\n    <input type=\"submit\" tabindex=\"3\" (click)=\"registerInWithEmail()\" [disabled]=\"regForm.invalid\" class=\"form-control btn btn-dark\"\r\n      value=\"REGISTER\">\r\n  </div>\r\n</form>"
+module.exports = "<form novalidate autocomplete=\"off\" [formGroup]=\"regForm\">\r\n  <div class=\"form-group\">\r\n    <input type=\"email\" tabindex=\"1\" formControlName=\"email\" class=\"form-control\" placeholder=\"Email Address\" pattern=\"^\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,3}$\">\r\n  </div>\r\n  <div *ngIf=\"regForm.get('email').invalid && (regForm.get('email').dirty || regForm.get('email').touched)\" class=\"alert alert-danger\">\r\n    <div *ngIf=\"regForm.get('email').errors.required\">\r\n      Email address is required.\r\n    </div>\r\n    <div *ngIf=\"regForm.get('email').errors.pattern\">\r\n      Email address is not properly formatted.\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"password\" tabindex=\"2\" formControlName=\"password\" class=\"form-control\" placeholder=\"Password\" minlength=\"6\">\r\n  </div>\r\n  <div *ngIf=\"regForm.get('password').invalid && (regForm.get('password').dirty || regForm.get('password').touched)\" class=\"alert alert-danger\">\r\n    <div *ngIf=\"regForm.get('password').errors.required\">\r\n      Password is required.\r\n    </div>\r\n    <div *ngIf=\"regForm.get('password').errors.minlength\">\r\n      Password must be at least 6 characters long.\r\n    </div>\r\n  </div>\r\n\r\n\r\n  <div class=\"form-group\">\r\n    <input type=\"text\" tabindex=\"3\" formControlName=\"fullname\" class=\"form-control\" placeholder=\"Your Full Name\" pattern=\"^[a-zA-Z]+(?:[\\s.']+[a-zA-Z]+)*$\">\r\n  </div>\r\n  <div *ngIf=\"regForm.get('fullname').invalid && (regForm.get('fullname').dirty || regForm.get('fullname').touched)\" class=\"alert alert-danger\">\r\n    <div *ngIf=\"regForm.get('fullname').errors.required\">\r\n      Name is required.\r\n    </div>\r\n    <div *ngIf=\"regForm.get('fullname').errors.pattern\">\r\n      Name shouldn't include special characters(except space between first and last name)\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"col-sm-6 offset-sm-3\">\r\n    <input type=\"submit\" tabindex=\"4\" (click)=\"registerInWithEmail()\" [disabled]=\"regForm.invalid\" class=\"form-control btn btn-dark\"\r\n      value=\"REGISTER\">\r\n  </div>\r\n</form>"
 
 /***/ }),
 
@@ -817,7 +943,8 @@ var RegisterComponent = /** @class */ (function () {
         this.auth = auth;
         this.regForm = this.fb.group({
             email: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
-            password: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]
+            password: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
+            fullname: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]
         });
     }
     RegisterComponent.prototype.ngOnInit = function () {
@@ -825,7 +952,8 @@ var RegisterComponent = /** @class */ (function () {
     RegisterComponent.prototype.registerInWithEmail = function () {
         var email = this.regForm.value.email;
         var password = this.regForm.value.password;
-        this.auth.signUpWithEmail(email, password);
+        var name = this.regForm.value.fullname;
+        this.auth.signUpWithEmail(email, password, name);
     };
     RegisterComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -837,6 +965,69 @@ var RegisterComponent = /** @class */ (function () {
             _services_auth_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"]])
     ], RegisterComponent);
     return RegisterComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/leaderboard/leaderboard.component.css":
+/*!******************************************************************!*\
+  !*** ./src/app/components/leaderboard/leaderboard.component.css ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/leaderboard/leaderboard.component.html":
+/*!*******************************************************************!*\
+  !*** ./src/app/components/leaderboard/leaderboard.component.html ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  leaderboard works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/leaderboard/leaderboard.component.ts":
+/*!*****************************************************************!*\
+  !*** ./src/app/components/leaderboard/leaderboard.component.ts ***!
+  \*****************************************************************/
+/*! exports provided: LeaderboardComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LeaderboardComponent", function() { return LeaderboardComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var LeaderboardComponent = /** @class */ (function () {
+    function LeaderboardComponent() {
+    }
+    LeaderboardComponent.prototype.ngOnInit = function () {
+    };
+    LeaderboardComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-leaderboard',
+            template: __webpack_require__(/*! ./leaderboard.component.html */ "./src/app/components/leaderboard/leaderboard.component.html"),
+            styles: [__webpack_require__(/*! ./leaderboard.component.css */ "./src/app/components/leaderboard/leaderboard.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], LeaderboardComponent);
+    return LeaderboardComponent;
 }());
 
 
@@ -861,7 +1052,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-dark bg-primary\" style=\"margin-bottom: 25px\">\r\n  <!-- TODO: Add navigation links -->\r\n  <a class=\"navbar-brand\" href=\"#\">\r\n    Celebrity Name\r\n  </a>\r\n  <!-- <div class=\"form-inline my-2 my-lg-0\">\r\n    <button *ngIf=\"this.auth.isLoggedIn()\" class=\"btn btn-outline-light my-2 my-sm-0\" (click)=logout()>Logout</button>\r\n    \r\n  </div> -->\r\n\r\n  <div class=\"btn-group\" *ngIf=\"this.auth.isLoggedIn()\">\r\n    <button class=\"btn btn-secondary btn-sm\" type=\"button\">\r\n      <span *ngIf=\"this.userService.getUserObj()\">{{this.getUserName()}}</span>\r\n    </button>\r\n    <button type=\"button\" class=\"btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split\" data-toggle=\"dropdown\" aria-haspopup=\"true\"\r\n      aria-expanded=\"false\">\r\n      <span class=\"sr-only\">Toggle Dropdown</span>\r\n    </button>\r\n    <div class=\"dropdown-menu\">\r\n      <a class=\"dropdown-item\" (click)=logout()>Logout</a>\r\n    </div>\r\n  </div>\r\n</nav>"
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\" style=\"margin-bottom: 25px\">\r\n  <!-- TODO: Add navigation links -->\r\n  <span class=\"navbar-brand\">\r\n    Celebrity Name\r\n  </span>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\"\r\n    aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\r\n    <ul class=\"navbar-nav mr-auto\" *ngIf=\"this.authService.isLoggedIn()\">\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLink='/home' routerLinkActive='active'>Home</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLink='/leaderboard' routerLinkActive='active'>LeaderBoard</a>\r\n      </li>\r\n    </ul>\r\n\r\n    <ul class=\"navbar-nav\">\r\n      <div class=\"btn-group\" *ngIf=\"this.authService.isLoggedIn()\">\r\n        <button class=\"btn btn-primary btn-sm\" type=\"button\">\r\n          <span *ngIf=\"this.user\">Welcome, {{this.user.name}} <span class=\"badge badge-light\">{{this.user.score}} points</span> </span>\r\n        </button>\r\n        <button type=\"button\" class=\"btn btn-sm btn-primary dropdown-toggle dropdown-toggle-split\" data-toggle=\"dropdown\" aria-haspopup=\"true\"\r\n          aria-expanded=\"false\">\r\n          <span class=\"sr-only\">Toggle Dropdown</span>\r\n        </button>\r\n        <div class=\"dropdown-menu\">\r\n          <a class=\"dropdown-item\" (click)=logout()>Logout</a>\r\n        </div>\r\n      </div>\r\n    </ul>\r\n  </div>\r\n</nav>"
 
 /***/ }),
 
@@ -877,7 +1068,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavigationComponent", function() { return NavigationComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _services_auth_auth_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/auth/auth.service */ "./src/app/services/auth/auth.service.ts");
-/* harmony import */ var _services_data_user_user_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/data/user/user.service */ "./src/app/services/data/user/user.service.ts");
+/* harmony import */ var _models_user_model__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../models/user.model */ "./src/app/models/user.model.ts");
+/* harmony import */ var _services_data_user_user_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/data/user/user.service */ "./src/app/services/data/user/user.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -890,21 +1082,30 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var NavigationComponent = /** @class */ (function () {
-    function NavigationComponent(auth, userService) {
-        this.auth = auth;
+    function NavigationComponent(authService, userService) {
+        this.authService = authService;
         this.userService = userService;
     }
     NavigationComponent.prototype.logout = function () {
-        this.auth.logout();
+        this.authService.logout();
+        // this.userObserver.unsubscribe();
     };
     NavigationComponent.prototype.ngOnInit = function () {
-    };
-    NavigationComponent.prototype.getUserName = function () {
-        // console.log(this.userService.getUser());
-        this.user = this.userService.getUserObj();
-        if (this.user)
-            return this.user.name;
+        var _this = this;
+        // subscribe to score
+        // console.log('aaaaa');
+        this.user = new _models_user_model__WEBPACK_IMPORTED_MODULE_2__["User"]();
+        this.userObserver = this.userService.userSubject.subscribe(function (userCast) {
+            if (userCast != undefined) {
+                _this.user.uid = userCast.uid;
+                _this.user.name = userCast.name;
+                _this.user.email = userCast.email;
+                _this.user.score = userCast.score;
+                // console.log(this.user);
+            }
+        });
     };
     NavigationComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -913,9 +1114,36 @@ var NavigationComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./navigation.component.css */ "./src/app/components/navigation/navigation.component.css")]
         }),
         __metadata("design:paramtypes", [_services_auth_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"],
-            _services_data_user_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"]])
+            _services_data_user_user_service__WEBPACK_IMPORTED_MODULE_3__["UserService"]])
     ], NavigationComponent);
     return NavigationComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/models/user.model.ts":
+/*!**************************************!*\
+  !*** ./src/app/models/user.model.ts ***!
+  \**************************************/
+/*! exports provided: User */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "User", function() { return User; });
+var User = /** @class */ (function () {
+    function User() {
+    }
+    User.prototype.User = function (key$, uid, name, email, score) {
+        this.key$ = key$;
+        this.uid = uid;
+        this.name = name;
+        this.email = email;
+        this.score = score;
+    };
+    return User;
 }());
 
 
@@ -932,18 +1160,24 @@ var NavigationComponent = /** @class */ (function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "appRoutes", function() { return appRoutes; });
-/* harmony import */ var _components_home_home_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/home/home.component */ "./src/app/components/home/home.component.ts");
+/* harmony import */ var _services_auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./services/auth/auth-guard.service */ "./src/app/services/auth/auth-guard.service.ts");
 /* harmony import */ var _components_landing_register_register_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/landing/register/register.component */ "./src/app/components/landing/register/register.component.ts");
 /* harmony import */ var _components_landing_landing_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/landing/landing.component */ "./src/app/components/landing/landing.component.ts");
 /* harmony import */ var _components_landing_login_login_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/landing/login/login.component */ "./src/app/components/landing/login/login.component.ts");
+/* harmony import */ var _components_home_home_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/home/home.component */ "./src/app/components/home/home.component.ts");
+/* harmony import */ var _components_leaderboard_leaderboard_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/leaderboard/leaderboard.component */ "./src/app/components/leaderboard/leaderboard.component.ts");
+
+
 
 
 
 
 var appRoutes = [
+    { path: '', redirectTo: '/login', pathMatch: 'full' },
     {
         path: 'home',
-        component: _components_home_home_component__WEBPACK_IMPORTED_MODULE_0__["HomeComponent"],
+        component: _components_home_home_component__WEBPACK_IMPORTED_MODULE_4__["HomeComponent"],
+        canActivate: [_services_auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_0__["AuthGuard"]]
     },
     {
         path: 'register', component: _components_landing_landing_component__WEBPACK_IMPORTED_MODULE_2__["LandingComponent"],
@@ -953,7 +1187,10 @@ var appRoutes = [
         path: 'login', component: _components_landing_landing_component__WEBPACK_IMPORTED_MODULE_2__["LandingComponent"],
         children: [{ path: '', component: _components_landing_login_login_component__WEBPACK_IMPORTED_MODULE_3__["LoginComponent"] }]
     },
-    { path: '', redirectTo: '/login', pathMatch: 'full' }
+    {
+        path: 'leaderboard', component: _components_leaderboard_leaderboard_component__WEBPACK_IMPORTED_MODULE_5__["LeaderboardComponent"]
+    }
+    //TODO : Add route for Error page
 ];
 
 
@@ -996,9 +1233,9 @@ var AuthGuard = /** @class */ (function () {
         if (this.authService.isLoggedIn()) {
             return true;
         }
-        this.toastr.error('You\'re not logged in', 'Error', {
-            timeOut: 3000,
-        });
+        // this.toastr.error('You\'re not logged in', 'Error', {
+        //     timeOut: 3000,
+        // });
         this.router.navigate(['/']);
         return false;
     };
@@ -1028,8 +1265,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var angularfire2_auth__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angularfire2/auth */ "./node_modules/angularfire2/auth/index.js");
 /* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/index.js");
 /* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
-/* harmony import */ var _data_user_user_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../data/user/user.service */ "./src/app/services/data/user/user.service.ts");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var _data_user_user_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../data/user/user.service */ "./src/app/services/data/user/user.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1045,6 +1283,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var AuthService = /** @class */ (function () {
     function AuthService(_firebaseAuth, router, toastr, userService) {
         var _this = this;
@@ -1053,15 +1292,19 @@ var AuthService = /** @class */ (function () {
         this.toastr = toastr;
         this.userService = userService;
         this.userDetails = null;
+        // Subject Observale for answers
+        this.subject = new rxjs__WEBPACK_IMPORTED_MODULE_4__["Subject"]();
         this.user = _firebaseAuth.authState;
         this.user.subscribe(function (user) {
             if (user) {
-                // console.log(user);
-                var uid = user.uid;
-                userService.getUser(uid);
                 _this.userDetails = user;
+                _this.userService.getUser(_this.userDetails.uid);
+                _this.router.navigateByUrl('/home');
             }
             else {
+                _this.toastr.error('You\'re not logged in', 'Error', {
+                    timeOut: 3000,
+                });
                 _this.userDetails = null;
             }
         });
@@ -1070,17 +1313,19 @@ var AuthService = /** @class */ (function () {
         var credential = firebase_app__WEBPACK_IMPORTED_MODULE_3__["auth"].EmailAuthProvider.credential(email, password);
         return this._firebaseAuth.auth.signInWithEmailAndPassword(email, password);
     };
-    AuthService.prototype.signUpWithEmail = function (email, password) {
+    AuthService.prototype.signUpWithEmail = function (email, password, name) {
         var _this = this;
         return this._firebaseAuth.auth.createUserWithEmailAndPassword(email, password)
-            .then(function (res) {
-            _this.router.navigate(['/login']);
-            _this.toastr.success('You\'ve successfully registered. Please log in to continue', 'Success', {
+            .then(function (user) {
+            // Store user in db
+            _this.userService.insertUser(user, name);
+            _this.userDetails = user;
+            _this.router.navigate(['/home']);
+            _this.toastr.success('You\'ve successfully registered!', 'Success', {
                 timeOut: 3000,
             });
         })
             .catch(function (error) {
-            // console.log(error)
             _this.toastr.error('There was an error during registration. Please try again', 'Error', {
                 timeOut: 3000,
             });
@@ -1094,10 +1339,21 @@ var AuthService = /** @class */ (function () {
             return true;
         }
     };
-    AuthService.prototype.getUid = function () {
-        if (this.userDetails != null)
-            return this.userDetails.uid;
-    };
+    // getUserObj() {
+    //   let user = new User();
+    //   if (this.userDetails) {
+    //     let userCast = this.userDetails as any;
+    //     user.uid = userCast.uid;
+    //     user.name = userCast.name;
+    //     user.email = userCast.email;
+    //     user.score = userCast.score;
+    //   }
+    //   return user;
+    // }
+    // getUid(){
+    //   if(this.userDetails != null)
+    //     return this.userDetails.uid;
+    // }
     AuthService.prototype.logout = function () {
         var _this = this;
         this._firebaseAuth.auth.signOut()
@@ -1107,8 +1363,8 @@ var AuthService = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
         __metadata("design:paramtypes", [angularfire2_auth__WEBPACK_IMPORTED_MODULE_2__["AngularFireAuth"],
             _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
-            ngx_toastr__WEBPACK_IMPORTED_MODULE_4__["ToastrService"],
-            _data_user_user_service__WEBPACK_IMPORTED_MODULE_5__["UserService"]])
+            ngx_toastr__WEBPACK_IMPORTED_MODULE_5__["ToastrService"],
+            _data_user_user_service__WEBPACK_IMPORTED_MODULE_6__["UserService"]])
     ], AuthService);
     return AuthService;
 }());
@@ -1178,6 +1434,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var angularfire2_database__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! angularfire2/database */ "./node_modules/angularfire2/database/index.js");
 /* harmony import */ var _typed_hashmap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @typed/hashmap */ "./node_modules/@typed/hashmap/lib.es2015/index.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _user_user_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../user/user.service */ "./src/app/services/data/user/user.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1191,59 +1448,72 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var GameService = /** @class */ (function () {
-    function GameService(firebase) {
+    function GameService(firebase, userService) {
         this.firebase = firebase;
+        this.userService = userService;
+        // Subject Observale for answers
+        this.subject = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
+        // Ref to firebase db -> games
+        this.ref = this.firebase.list('games');
     }
     GameService.prototype.gameEntry = function (game) {
-        var ref = this.firebase.list('games');
         var ans = new Array();
         game.forEach(function (i) {
             ans.push(i.id + ":" + i.name);
         });
-        var key = ref.push({ ans: ans }).key;
+        // Save correct answers for game
+        var key = this.ref.push({ ans: ans }).key;
         return key;
     };
     GameService.prototype.getCorrectAnswers = function (key, selectedAnswers) {
         var _this = this;
         // Initialize variables
-        this.answers = new Array();
-        this.score = 0;
-        var ref = this.firebase.list('games');
-        ref.snapshotChanges().subscribe(function (item) {
+        var answers = new Array();
+        var score = 0;
+        this.subscription = this.ref.snapshotChanges().subscribe(function (item) {
             item.forEach(function (element) {
+                // Get correct game and check correct answers against submitted
                 if (element.key === key) {
                     _this.correctAnswers = element.payload.toJSON();
+                    var i_1 = 0;
+                    // Traverse through answered map and check if correct or not
                     Object(_typed_hashmap__WEBPACK_IMPORTED_MODULE_2__["forEach"])(function (value, key) {
                         var index = key;
-                        if (_this.correctAnswers.ans[index] == value) {
-                            _this.score++;
-                            // console.log(this.score);
+                        // console.log(index, i);
+                        // Add blank entries for unanswered questions
+                        while (index != i_1) {
+                            answers.push(i_1 + ":" + '');
+                            i_1++;
                         }
-                        _this.answers.push(key + ":" + (_this.correctAnswers.ans[index] == value));
+                        // Increment score of correct answers
+                        if (_this.correctAnswers.ans[index] == value) {
+                            score++;
+                        }
+                        // Add correct/wrong answer for cast index
+                        answers.push(key + ":" + (_this.correctAnswers.ans[index] == value));
+                        i_1++;
                     }, selectedAnswers);
-                    // this.answers.push(correct+":''");
-                    console.log(_this.answers, _this.score);
-                    // this.answers;
-                    // return score;
+                    // Update score in db
+                    _this.userService.updateUser(score);
+                    // Emit answers object to subscribers
+                    _this.subject.next(answers);
                 }
             });
         });
-        // TODO: add score to db
-        console.log('aa ' + this.score);
     };
-    GameService.prototype.getFinalAnswers = function () {
-        return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])(this.answers);
-        // return this.getCorrectAnswers().subscribe(data => console.log('aa '+data)) ;
-    };
-    GameService.prototype.getFinalScore = function () {
-        return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])(this.score);
+    GameService.prototype.unsubscriveFromObject = function () {
+        // Unsubscribe on game end
+        if (this.subscription)
+            this.subscription.unsubscribe();
     };
     GameService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
         }),
-        __metadata("design:paramtypes", [angularfire2_database__WEBPACK_IMPORTED_MODULE_1__["AngularFireDatabase"]])
+        __metadata("design:paramtypes", [angularfire2_database__WEBPACK_IMPORTED_MODULE_1__["AngularFireDatabase"],
+            _user_user_service__WEBPACK_IMPORTED_MODULE_4__["UserService"]])
     ], GameService);
     return GameService;
 }());
@@ -1311,6 +1581,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserService", function() { return UserService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var angularfire2_database__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! angularfire2/database */ "./node_modules/angularfire2/database/index.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1322,28 +1593,55 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
 var UserService = /** @class */ (function () {
     function UserService(firebase) {
         this.firebase = firebase;
+        // Subject Observable for score
+        this.subject = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
+        this.userSubject = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
+        // Ref to firebase db -> users
+        this.ref = this.firebase.list('users');
     }
+    // Get logged in user details (not used)
     UserService.prototype.getUser = function (uid) {
         var _this = this;
-        var ref = this.firebase.list('users');
-        ref.snapshotChanges().subscribe(function (item) {
+        this.ref = this.firebase.list('users');
+        this.ref.snapshotChanges().subscribe(function (item) {
             item.forEach(function (element) {
-                if (element.key === uid) {
-                    _this.user = element.payload.toJSON();
-                    _this.user.key = element.key;
-                    return;
+                if (element) {
+                    if (element.payload.toJSON().uid === uid) {
+                        _this.user = element.payload.toJSON();
+                        _this.user.key$ = element.key;
+                        _this.userSubject.next(_this.user);
+                        return;
+                    }
                 }
             });
         });
     };
-    UserService.prototype.getUserObj = function () {
-        return this.user;
-    };
+    // Return user object
+    // getUserObj() {
+    //   return this.user;
+    // }
     //TODO: create new user
-    UserService.prototype.insertUser = function (user) {
+    UserService.prototype.insertUser = function (user, displayname) {
+        this.ref.push({
+            uid: user.uid,
+            email: user.email,
+            name: displayname,
+            score: 0
+        });
+    };
+    // Update the user object -> Game score
+    UserService.prototype.updateUser = function (score) {
+        this.ref.update(this.user.key$, {
+            email: this.user.email,
+            name: this.user.name,
+            score: this.user.score + score,
+            uid: this.user.uid
+        });
+        this.subject.next(score);
     };
     UserService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
