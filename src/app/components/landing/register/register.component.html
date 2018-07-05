@@ -12,16 +12,32 @@
   </div>
 
   <div class="form-group">
-    <input type="password" tabindex="2" formControlName="password" class="form-control" placeholder="Password">
+    <input type="password" tabindex="2" formControlName="password" class="form-control" placeholder="Password" minlength="6">
   </div>
   <div *ngIf="regForm.get('password').invalid && (regForm.get('password').dirty || regForm.get('password').touched)" class="alert alert-danger">
     <div *ngIf="regForm.get('password').errors.required">
       Password is required.
     </div>
+    <div *ngIf="regForm.get('password').errors.minlength">
+      Password must be at least 6 characters long.
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <input type="text" tabindex="3" formControlName="fullname" class="form-control" placeholder="Your Full Name" pattern="^[a-zA-Z]+(?:[\s.']+[a-zA-Z]+)*$">
+  </div>
+  <div *ngIf="regForm.get('fullname').invalid && (regForm.get('fullname').dirty || regForm.get('fullname').touched)" class="alert alert-danger">
+    <div *ngIf="regForm.get('fullname').errors.required">
+      Name is required.
+    </div>
+    <div *ngIf="regForm.get('fullname').errors.pattern">
+      Name shouldn't include special characters(except space between first and last name)
+    </div>
   </div>
 
   <div class="col-sm-6 offset-sm-3">
-    <input type="submit" tabindex="3" (click)="registerInWithEmail()" [disabled]="regForm.invalid" class="form-control btn btn-dark"
+    <input type="submit" tabindex="4" (click)="registerInWithEmail()" [disabled]="regForm.invalid" class="form-control btn btn-dark"
       value="REGISTER">
   </div>
 </form>

@@ -80,10 +80,6 @@ export class GameService {
     });
   }
 
-  // getFinalAnswers() {
-  //   return of(this.answers);
-  // }
-
   unsubscriveFromObject() {
     // Unsubscribe on game end
     if (this.subscription)

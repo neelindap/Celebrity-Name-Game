@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import { Router } from "@angular/router";
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 import { UserService } from '../data/user/user.service';
+import { User } from '../../models/user.model';
 
 @Injectable()
 export class AuthService {
@@ -12,7 +13,10 @@ export class AuthService {
   private user: Observable<firebase.User>;
   private userDetails: firebase.User = null;
 
-  constructor(private _firebaseAuth: AngularFireAuth, 
+  // Subject Observale for answers
+  public subject = new Subject();
+
+  constructor(private _firebaseAuth: AngularFireAuth,
     private router: Router,
     private toastr: ToastrService,
     private userService: UserService) {
@@ -20,12 +24,14 @@ export class AuthService {
     this.user.subscribe(
       (user) => {
         if (user) {
-          // console.log(user);
-          let uid = user.uid
-          userService.getUser(uid);
           this.userDetails = user;
+          this.userService.getUser(this.userDetails.uid)
+          this.router.navigateByUrl('/home');
         }
         else {
+          this.toastr.error('You\'re not logged in', 'Error', {
+              timeOut: 3000,
+          });
           this.userDetails = null;
         }
       }
@@ -37,16 +43,18 @@ export class AuthService {
     return this._firebaseAuth.auth.signInWithEmailAndPassword(email, password)
   }
 
-  signUpWithEmail(email: string, password: string): Promise<void> {
+  signUpWithEmail(email: string, password: string, name: string): Promise<void> {
     return this._firebaseAuth.auth.createUserWithEmailAndPassword(email, password)
-      .then((res) => {
-        this.router.navigate(['/login']);
-        this.toastr.success('You\'ve successfully registered. Please log in to continue', 'Success', {
+      .then((user) => {
+        // Store user in db
+        this.userService.insertUser(user, name)
+        this.userDetails = user;
+        this.router.navigate(['/home']);
+        this.toastr.success('You\'ve successfully registered!', 'Success', {
           timeOut: 3000,
         });
       })
       .catch((error) => {
-        // console.log(error)
         this.toastr.error('There was an error during registration. Please try again', 'Error', {
           timeOut: 3000,
         });
@@ -62,10 +70,22 @@ export class AuthService {
     }
   }
 
-  getUid(){
-    if(this.userDetails != null)
-      return this.userDetails.uid;
-  }
+  // getUserObj() {
+  //   let user = new User();
+  //   if (this.userDetails) {
+  //     let userCast = this.userDetails as any;
+  //     user.uid = userCast.uid;
+  //     user.name = userCast.name;
+  //     user.email = userCast.email;
+  //     user.score = userCast.score;
+  //   }
+  //   return user;
+  // }
+
+  // getUid(){
+  //   if(this.userDetails != null)
+  //     return this.userDetails.uid;
+  // }
 
   logout() {
     this._firebaseAuth.auth.signOut()

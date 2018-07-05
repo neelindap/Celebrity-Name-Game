@@ -15,7 +15,8 @@ export class RegisterComponent implements OnInit {
               private auth: AuthService) {
     this.regForm = this.fb.group({
       email:['', Validators.required],
-      password:['', Validators.required]
+      password:['', Validators.required],
+      fullname:['', Validators.required]
     })
   }
 
@@ -26,8 +27,9 @@ export class RegisterComponent implements OnInit {
   registerInWithEmail(): void {
     const email = this.regForm.value.email;
     const password = this.regForm.value.password;
+    const name = this.regForm.value.fullname;
 
-    this.auth.signUpWithEmail(email, password);
+    this.auth.signUpWithEmail(email, password, name);
   }
 
 }

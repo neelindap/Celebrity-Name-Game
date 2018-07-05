@@ -8,7 +8,6 @@ import { ToastrService } from 'ngx-toastr';
 
 import { empty, size, set } from '@typed/hashmap';
 import { UserService } from '../../services/data/user/user.service';
-import { Observable } from 'rxjs';
 
 // import fade in animation
 import { fadeInAnimation } from '../../animations'
