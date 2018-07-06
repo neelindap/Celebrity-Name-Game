@@ -266,7 +266,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Footer -->\n<footer class=\"page-footer footer font-small bg-primary\">\n\n  <!-- Copyright -->\n  <div class=\"footer-copyright text-center py-3 bg-dark text-white\">© 2018 Copyright:\n    <a href=\"http://www.neelindap.com/\" class=\"alert-link\" target=\"_blank\"> Neel Indap</a>\n  </div>\n  <!-- Copyright -->\n\n</footer>\n<!-- Footer -->"
+module.exports = "<!-- Footer -->\r\n<footer class=\"page-footer footer font-small bg-primary\">\r\n\r\n  <!-- Copyright -->\r\n  <div class=\"footer-copyright text-center py-3 bg-dark text-white\">© 2018 Copyright:\r\n    <a href=\"http://www.neelindap.com/\" class=\"alert-link\" target=\"_blank\"> Neel Indap</a>\r\n  </div>\r\n  <!-- Copyright -->\r\n\r\n</footer>\r\n<!-- Footer -->"
 
 /***/ }),
 
@@ -989,7 +989,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  leaderboard works!\n</p>\n"
+module.exports = "<p>\r\n  leaderboard works!\r\n</p>\r\n"
 
 /***/ }),
 

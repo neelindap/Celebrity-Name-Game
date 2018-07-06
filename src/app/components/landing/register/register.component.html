@@ -23,9 +23,22 @@
     </div>
   </div>
 
+  <!-- confirm password -->
+  <div class="form-group">
+    <input type="password" tabindex="3" formControlName="confirmPassword" class="form-control" placeholder="Confirm Password">
+  </div>
+  <div *ngIf="regForm.get('confirmPassword').invalid && (regForm.get('confirmPassword').dirty || regForm.get('confirmPassword').touched)"
+    class="alert alert-danger">
+    <div *ngIf="regForm.get('confirmPassword').errors.required">
+      Confirm password is required.
+    </div>
+    <div *ngIf="regForm.get('confirmPassword').errors?.passwordNotMatch">
+      Password fields do not match.
+    </div>
+  </div>
 
   <div class="form-group">
-    <input type="text" tabindex="3" formControlName="fullname" class="form-control" placeholder="Your Full Name" pattern="^[a-zA-Z]+(?:[\s.']+[a-zA-Z]+)*$">
+    <input type="text" tabindex="4" formControlName="fullname" class="form-control" placeholder="Your Full Name" pattern="^[a-zA-Z]+(?:[\s.']+[a-zA-Z]+)*$">
   </div>
   <div *ngIf="regForm.get('fullname').invalid && (regForm.get('fullname').dirty || regForm.get('fullname').touched)" class="alert alert-danger">
     <div *ngIf="regForm.get('fullname').errors.required">
@@ -37,7 +50,7 @@
   </div>
 
   <div class="col-sm-6 offset-sm-3">
-    <input type="submit" tabindex="4" (click)="registerInWithEmail()" [disabled]="regForm.invalid" class="form-control btn btn-dark"
+    <input type="submit" tabindex="5" (click)="registerInWithEmail()" [disabled]="regForm.invalid" class="form-control btn btn-dark"
       value="REGISTER">
   </div>
 </form>

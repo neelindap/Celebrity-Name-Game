@@ -19,12 +19,28 @@
 
   <div class="loader m-auto" *ngIf="castLoading"></div>
 
-  <!-- TODO : No results found-->
+  <!-- No results found-->
+  <div class="row mt-5" *ngIf="noMovies && movieForm.get('title').value && movieForm.get('title').value.length > 0">
+    <div class="offset-md-2 col-md-8">
+      <div class="alert alert-danger fade show text-center" role="alert">
+        Sorry, no movies by the name {{movieForm.get('title').value}} present in the database.
+      </div>
+    </div>
+  </div>
+
+  <!-- No cast results found-->
+  <div class="row mt-5" *ngIf="noCast && !noMovies && !movieForm.get('title').focus">
+    <div class="offset-md-2 col-md-8">
+      <div class="alert alert-danger fade show text-center" role="alert">
+        Sorry, no cast information present for this movie.
+      </div>
+    </div>
+  </div>
 
   <div class="row mt-5" *ngIf="castPresent">
     <div class="col-md-12">
       <div class="card">
-        <div class="card-header font-weight-bold">Naming celebrities from {{movieForm.get('title').value}}</div>
+        <div class="card-header font-weight-bold">Match the faces of {{movieForm.get('title').value}}'s cast members to their names!</div>
         <div class="card-body">
           <div class="container-fluid">
             <div class="row">

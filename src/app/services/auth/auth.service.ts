@@ -30,7 +30,7 @@ export class AuthService {
         }
         else {
           this.toastr.error('You\'re not logged in', 'Error', {
-              timeOut: 3000,
+            timeOut: 3000,
           });
           this.userDetails = null;
         }
@@ -54,10 +54,20 @@ export class AuthService {
           timeOut: 3000,
         });
       })
+
       .catch((error) => {
-        this.toastr.error('There was an error during registration. Please try again', 'Error', {
-          timeOut: 3000,
-        });
+        // Catch email already existing errors
+        if (error.code == 'auth/email-already-in-use') {
+          this.toastr.error('The email-id already already exists in the database', 'Error', {
+            timeOut: 3000,
+          });
+        }
+        // Catch all error 
+        else {
+          this.toastr.error('There was an error during registration. Please try again', 'Error', {
+            timeOut: 3000,
+          });
+        }
       });
   }
 

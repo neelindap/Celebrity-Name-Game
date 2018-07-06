@@ -28,6 +28,7 @@ export class HomeComponent implements OnInit {
   public movieForm: FormGroup;
   private movies: any[];
   private moviesPresent: boolean = false;
+  private noMovies: boolean = false;
 
   // Cast
   private cast: String[] = new Array();
@@ -35,6 +36,7 @@ export class HomeComponent implements OnInit {
   private castPresent: boolean = false;
   private castLoading: boolean = false;
   private counter: number = 0;
+  private noCast: boolean = false;
 
   // Submitted Answers
   private selectedAnswers = empty<number, string>();
@@ -69,11 +71,18 @@ export class HomeComponent implements OnInit {
     this.answers = [];
     this.castPresent = false;
     this.selectedAnswers = empty<number, string>();
+    this.noMovies = false;
+    this.noCast = false;
 
     const movieTitle = this.movieForm.value.title;
     if (movieTitle.length >= 3) {
       this.movieService.searchMovie(movieTitle).subscribe(
         (movies: any) => {
+          if (movies.total_results == 0) {
+            this.noMovies = true;
+            this.moviesPresent = false;
+            return;
+          }
           this.movies = movies.results;
           this.moviesPresent = true;
         },
@@ -104,10 +113,17 @@ export class HomeComponent implements OnInit {
     this.cast = new Array();
     this.castNames = new Array();
     this.counter = 0;
-
     this.castLoading = true;
+
     this.castService.searchCast(movieId).subscribe(
       (casts: any) => {
+        // Less than 5 cast member info -> return
+        if (casts.cast.length < 5) {
+          this.castLoading = false;
+          this.noCast = true;
+          return;
+        }
+
         for (let i in casts.cast) {
           let e = casts.cast[i];
           if (e.profile_path != null) {
@@ -126,7 +142,15 @@ export class HomeComponent implements OnInit {
           this.castPresent = true;
         }
         this.castLoading = false;
+        this.noCast = false;
 
+        // if (this.counter < 5) {
+        //   this.noCast = true;
+        //   this.castPresent = false;
+        //   this.cast = new Array();
+        //   this.counter = 0;
+        //   return;
+        // }
         // store in DB -> Get stored item key
         this.key = this.gameService.gameEntry(this.cast);
 

@@ -1,0 +1,19 @@
+<table datatable [dtOptions]="dtOptions" class="row-border hover">
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>User's Name</th>
+      <th>Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let s of scores; let i=index">
+      <td>{{ i+1 }}</td>
+      <td>{{ s.name }}</td>
+      <td>{{ s.value }}</td>
+    </tr>
+    <tr *ngIf="scores?.length == 0">
+      <td colspan="3" class="no-data-available">No data!</td>
+    </tr>
+  </tbody>
+</table>
