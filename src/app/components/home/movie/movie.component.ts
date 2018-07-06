@@ -1,13 +1,9 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-// import fade in animation
-import { staggerAnimation } from '../../../animations'
 
 @Component({
   selector: 'app-movie',
   templateUrl: './movie.component.html',
   styleUrls: ['./movie.component.css'],
-  animations: [staggerAnimation],
-  host: { '[@staggerAnimation]': '' }
 })
 
 export class MovieComponent implements OnInit {
