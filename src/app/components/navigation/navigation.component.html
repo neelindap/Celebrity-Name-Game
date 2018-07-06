@@ -19,7 +19,7 @@
     </ul>
 
     <ul class="navbar-nav">
-      <div class="btn-group" *ngIf="this.authService.isLoggedIn()">
+      <div class="btn-group" *ngIf="this.authService.isLoggedIn() && !this.authService.userDetails.isAnonymous">
         <!-- TODO: user profile page?-->
         <button class="btn btn-primary btn-sm" type="button">
           <span *ngIf="this.user">Welcome, {{this.user.name}}
@@ -33,6 +33,11 @@
         <div class="dropdown-menu">
           <a class="dropdown-item" (click)=logout()>Logout</a>
         </div>
+      </div>
+
+      <div class="btn-group" *ngIf="this.authService.isLoggedIn() && this.authService.userDetails.isAnonymous">
+        <button class="btn btn-primary btn-sm" type="button" (click)=logout()>End Guest Session
+        </button>
       </div>
     </ul>
   </div>

@@ -26,4 +26,11 @@
     <input type="submit" tabindex="3" (click)="signInWithEmail()" [disabled]="loginForm.invalid" class="form-control btn btn-dark"
       value="LOG IN">
   </div>
+
+  <div class="text-center mt-2 mb-2 or-text"><span>OR</span></div>
+  
+  <div class="col-sm-6 offset-sm-3">
+    <input type="submit" tabindex="3" (click)="signInAnon()" class="form-control btn btn-dark"
+      value="CONTINUE AS GUEST">
+  </div>
 </form>

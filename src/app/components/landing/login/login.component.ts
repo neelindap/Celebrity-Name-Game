@@ -41,4 +41,9 @@ export class LoginComponent implements OnInit {
       });
   }
 
+  //Sign in anon
+  signInAnon(){
+    this.authService.signInAnon()
+  }
+
 }
