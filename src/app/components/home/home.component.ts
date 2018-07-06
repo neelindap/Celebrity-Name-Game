@@ -10,14 +10,14 @@ import { size, set, fromObject } from '@typed/hashmap';
 import { UserService } from '../../services/data/user/user.service';
 
 // import fade in animation
-import { fadeInAnimation } from '../../animations'
+import { fadeInAnimation, staggerAnimationList } from '../../animations'
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
   // make fade in animation available to this component
-  animations: [fadeInAnimation],
+  animations: [fadeInAnimation, staggerAnimationList],
 
   // attach the fade in animation to the host (root) element of this component
   host: { '[@fadeInAnimation]': '' }
