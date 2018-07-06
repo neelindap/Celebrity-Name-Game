@@ -20,7 +20,7 @@ export class MovieComponent implements OnInit {
   @Output() findCast = new EventEmitter<string>();
 
   private IMAGE_BASE: String = "https://image.tmdb.org/t/p/w154";
-  private image: String;
+  public image: String;
   
 
   constructor() {

@@ -5,7 +5,6 @@ import * as firebase from 'firebase/app';
 import { Observable, Subject } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 import { UserService } from '../data/user/user.service';
-import { User } from '../../models/user.model';
 
 @Injectable()
 export class AuthService {
