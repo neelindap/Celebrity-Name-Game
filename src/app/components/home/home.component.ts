@@ -6,7 +6,7 @@ import { CastService } from '../../services/data/cast/cast.service';
 import { GameService } from '../../services/data/game/game.service';
 import { ToastrService } from 'ngx-toastr';
 
-import { empty, size, set } from '@typed/hashmap';
+import { size, set, fromObject } from '@typed/hashmap';
 import { UserService } from '../../services/data/user/user.service';
 
 // import fade in animation
@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit {
   public noCast: boolean = false;
 
   // Submitted Answers
-  private selectedAnswers = empty<number, string>();
+  private selectedAnswers: any;
   private key: string;
 
   // Correct Answers
@@ -70,7 +70,9 @@ export class HomeComponent implements OnInit {
     this.answered = false;
     this.answers = [];
     this.castPresent = false;
-    this.selectedAnswers = empty<number, string>();
+
+    // Intialize using blanks -> Fix issue with random ordered selection
+    this.selectedAnswers = fromObject<string>({0: '', 1: '', 2:'', 3:'', 4:''});
     this.noMovies = false;
     this.noCast = false;
 
@@ -185,6 +187,7 @@ export class HomeComponent implements OnInit {
 
     // Add to map
     this.selectedAnswers = set(id, cast_id + ":" + cast_name, this.selectedAnswers);
+
   }
 
   // Submit answers
