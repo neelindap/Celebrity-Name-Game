@@ -27,16 +27,16 @@ export class HomeComponent implements OnInit {
   // Movies
   public movieForm: FormGroup;
   private movies: any[];
-  private moviesPresent: boolean = false;
-  private noMovies: boolean = false;
+  public moviesPresent: boolean = false;
+  public noMovies: boolean = false;
 
   // Cast
   private cast: String[] = new Array();
   private castNames: String[] = new Array();
-  private castPresent: boolean = false;
-  private castLoading: boolean = false;
+  public castPresent: boolean = false;
+  public castLoading: boolean = false;
   private counter: number = 0;
-  private noCast: boolean = false;
+  public noCast: boolean = false;
 
   // Submitted Answers
   private selectedAnswers = empty<number, string>();

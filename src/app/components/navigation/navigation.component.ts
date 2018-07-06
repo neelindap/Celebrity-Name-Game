@@ -14,7 +14,7 @@ export class NavigationComponent implements OnInit {
   private user: User;
   private userObserver;
 
-  constructor(private authService: AuthService,
+  constructor(public authService: AuthService,
     private userService: UserService) {
 
   }

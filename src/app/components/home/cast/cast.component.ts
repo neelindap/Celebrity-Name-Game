@@ -15,7 +15,7 @@ export class CastComponent implements OnInit {
   @Output() addToMap = new EventEmitter<string>();
 
   private IMAGE_BASE: String = "https://image.tmdb.org/t/p/w154";
-  private image: String;
+  public image: String;
 
   private selectedIndex: number = null;
 

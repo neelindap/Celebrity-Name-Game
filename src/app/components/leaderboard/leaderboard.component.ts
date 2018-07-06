@@ -9,7 +9,7 @@ import { UserService } from '../../services/data/user/user.service';
 export class LeaderboardComponent implements OnInit {
 
   // Observer
-  private scores = new Array();
+  public scores = new Array();
 
   constructor(private userService: UserService) { }
 
