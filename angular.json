@@ -25,7 +25,8 @@
             "styles": [
               "node_modules/ngx-toastr/toastr.css",
               "src/styles.css",
-              "node_modules/datatables.net-dt/css/jquery.dataTables.css"
+              "node_modules/datatables.net-dt/css/jquery.dataTables.css",
+              "node_modules/roboto-fontface/css/roboto/roboto-fontface.css"
             ],
             "scripts": [              
               "node_modules/jquery/dist/jquery.min.js",

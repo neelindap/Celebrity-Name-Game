@@ -39,6 +39,7 @@
     "jquery": "^3.3.1",
     "ngx-toastr": "^8.8.0",
     "popper.js": "^1.14.3",
+    "roboto-fontface": "^0.9.0",
     "rxjs": "^6.0.0",
     "save": "^2.3.2",
     "zone.js": "^0.8.26"
