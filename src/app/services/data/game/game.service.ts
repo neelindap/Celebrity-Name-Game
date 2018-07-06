@@ -72,9 +72,8 @@ export class GameService {
             i++;
           }, selectedAnswers);
 
-          // Update score in db if user isn't anonymous
-          if(!this.authService.userDetails.isAnonymous)
-            this.userService.updateUser(score);
+          this.userService.updateUser(score,
+            this.authService.userDetails.isAnonymous);
 
           // console.log(answers);
           // Emit answers object to subscribers
@@ -87,6 +86,6 @@ export class GameService {
   unsubscriveFromObject() {
     // Unsubscribe on game end
     if (this.subscription)
-      this.subscription.unsubscribe();
+      this.subscription.complete();
   }
 }

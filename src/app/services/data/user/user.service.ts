@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { User } from '../../../models/user.model';
 import { Subject } from 'rxjs';
-import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -52,13 +51,17 @@ export class UserService {
   }
 
   // Update the user object -> Game score
-  updateUser(score: number) {
-    this.ref.update(this.user.key$, {
-      email: this.user.email,
-      name: this.user.name,
-      score: this.user.score + score,
-      uid: this.user.uid
-    });
+  updateUser(score: number, isAnon: boolean) {
+
+    // Update score in db if user isn't anonymous
+    if (!isAnon) {
+      this.ref.update(this.user.key$, {
+        email: this.user.email,
+        name: this.user.name,
+        score: this.user.score + score,
+        uid: this.user.uid
+      });
+    }
     this.subject.next(score);
   }
 
@@ -88,9 +91,6 @@ export class UserService {
       score = score.reverse();
       this.scoreSubject.next(score);
     });
-
-    // var a = score.reverse();
-    // console.log(score[0]);
   }
 
 }

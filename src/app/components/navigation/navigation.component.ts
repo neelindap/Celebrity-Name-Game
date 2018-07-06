@@ -37,4 +37,8 @@ export class NavigationComponent implements OnInit {
       });
   }
 
+  ngOnDestroy(){
+    this.userService.userSubject.unsubscribe();
+  }
+
 }

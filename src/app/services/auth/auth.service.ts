@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
@@ -15,12 +15,16 @@ export class AuthService {
   // Subject Observale for answers
   public subject = new Subject();
 
+  private loggedOut = false;
+
+  private unsubscribe;
+
   constructor(private _firebaseAuth: AngularFireAuth,
     private router: Router,
     private toastr: ToastrService,
     private userService: UserService) {
     this.user = _firebaseAuth.authState;
-    this.user.subscribe(
+    this.unsubscribe = this.user.subscribe(
       (user) => {
         if (user) {
           this.userDetails = user;
@@ -37,9 +41,16 @@ export class AuthService {
           this.router.navigateByUrl('/home');
         }
         else {
-          this.toastr.error('You\'re not logged in!', 'Error', {
-            timeOut: 3000,
-          });
+          if (this.loggedOut) {
+            this.toastr.success('You\'ve successfully logged out.', 'Success', {
+              timeOut: 3000,
+            });
+          }
+          else {
+            this.toastr.error('You\'re not logged in!', 'Error', {
+              timeOut: 3000,
+            });
+          }
           this.userDetails = null;
         }
       }
@@ -92,7 +103,12 @@ export class AuthService {
   }
 
   logout() {
+    this.loggedOut = true;
     this._firebaseAuth.auth.signOut()
       .then((res) => this.router.navigate(['/']));
+  }
+
+  ngOnDestroy(){
+    this.unsubscribe();
   }
 }
