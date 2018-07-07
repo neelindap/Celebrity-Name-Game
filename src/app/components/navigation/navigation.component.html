@@ -31,12 +31,12 @@
           <span class="sr-only">Toggle Dropdown</span>
         </button>
         <div class="dropdown-menu">
-          <a class="dropdown-item" (click)=logout()>Logout</a>
+          <a class="dropdown-item logout-button" (click)=logout()>Logout</a>
         </div>
       </div>
 
       <div class="btn-group" *ngIf="this.authService.isLoggedIn() && this.authService.userDetails.isAnonymous">
-        <button class="btn btn-primary btn-sm" type="button" (click)=logout()>End Guest Session
+        <button class="btn btn-primary btn-sm logout-button-guest" type="button" (click)=logout()>End Guest Session
         </button>
       </div>
     </ul>

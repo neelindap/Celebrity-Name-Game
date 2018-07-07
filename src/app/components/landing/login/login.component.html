@@ -6,7 +6,7 @@
     <div *ngIf="loginForm.get('email').errors.required">
       Email address is required.
     </div>
-    <div *ngIf="loginForm.get('email').errors.pattern">
+    <div *ngIf="loginForm.get('email').errors.pattern" class="error-email">
       Email address is not properly formatted.
     </div>
   </div>

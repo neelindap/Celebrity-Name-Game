@@ -13,13 +13,13 @@ export class LoginComponent implements OnInit {
 
   public loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder, 
-              private authService: AuthService, 
-              private router: Router,
-              private toastr: ToastrService) {
+  constructor(private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router,
+    private toastr: ToastrService) {
     this.loginForm = this.fb.group({
-      email:['', Validators.required],
-      password:['', Validators.required]
+      email: ['', Validators.required],
+      password: ['', Validators.required]
     })
   }
   ngOnInit() {
@@ -34,15 +34,32 @@ export class LoginComponent implements OnInit {
       })
       // Error messages
       .catch((err) => {
-        // console.log('error: ' + err)
-        this.toastr.error('You\'ve entered invalid credentials', 'Invalid credentials', {
-          timeOut: 3000,
-        });
+
+        // Invalid credentials
+        if (err.code == 'auth/user-not-found') {
+          this.toastr.error('You\'ve entered invalid credentials', 'Invalid credentials', {
+            timeOut: 3000,
+          });
+        }
+
+        // No network
+        else if (err.code == 'auth/network-request-failed') {
+          this.toastr.error('Please check your network connection', 'No Network', {
+            timeOut: 3000,
+          });
+        }
+
+        // Catch all error
+        else {
+          this.toastr.error('There was an error when trying to log in', 'Error', {
+            timeOut: 3000,
+          });
+        }
       });
   }
 
   //Sign in anon
-  signInAnon(){
+  signInAnon() {
     this.authService.signInAnon()
   }
 
