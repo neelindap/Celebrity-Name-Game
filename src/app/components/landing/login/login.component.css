@@ -16,3 +16,27 @@
   color: #fff;
   background-color: #007bff;
 }
+
+.or-text span:before,
+.or-text span:after {
+  content: "";
+  position: absolute;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  top: 10px;
+  width: 125px;
+}
+
+.or-text span {
+  display: inline-block;
+  position: relative;  
+}
+
+.or-text span:before {
+  right: 100%;
+  margin-right: 15px;
+}
+.or-text span:after {
+  left: 100%;
+  margin-left: 15px;
+}

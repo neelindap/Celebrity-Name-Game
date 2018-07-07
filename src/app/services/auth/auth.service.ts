@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
@@ -10,27 +10,47 @@ import { UserService } from '../data/user/user.service';
 export class AuthService {
 
   private user: Observable<firebase.User>;
-  private userDetails: firebase.User = null;
+  public userDetails: firebase.User = null;
 
   // Subject Observale for answers
   public subject = new Subject();
+
+  private loggedOut = false;
+
+  private unsubscribe;
 
   constructor(private _firebaseAuth: AngularFireAuth,
     private router: Router,
     private toastr: ToastrService,
     private userService: UserService) {
     this.user = _firebaseAuth.authState;
-    this.user.subscribe(
+    this.unsubscribe = this.user.subscribe(
       (user) => {
         if (user) {
           this.userDetails = user;
-          this.userService.getUser(this.userDetails.uid)
+          this.userService.getUser(this.userDetails.uid);
+          if (user.isAnonymous) {
+            this.toastr.success('Guest session created! Be sure to end the session.', 'Success', {
+              timeOut: 3000,
+            });
+          } else {
+            this.toastr.success('You\'re logged in!', 'Success', {
+              timeOut: 3000,
+            });
+          }
           this.router.navigateByUrl('/home');
         }
         else {
-          this.toastr.error('You\'re not logged in', 'Error', {
-            timeOut: 3000,
-          });
+          if (this.loggedOut) {
+            this.toastr.success('You\'ve successfully logged out.', 'Success', {
+              timeOut: 3000,
+            });
+          }
+          else {
+            this.toastr.error('You\'re not logged in!', 'Error', {
+              timeOut: 3000,
+            });
+          }
           this.userDetails = null;
         }
       }
@@ -70,6 +90,9 @@ export class AuthService {
       });
   }
 
+  signInAnon() {
+    this._firebaseAuth.auth.signInAnonymously();
+  }
 
   isLoggedIn() {
     if (this.userDetails == null) {
@@ -79,25 +102,13 @@ export class AuthService {
     }
   }
 
-  // getUserObj() {
-  //   let user = new User();
-  //   if (this.userDetails) {
-  //     let userCast = this.userDetails as any;
-  //     user.uid = userCast.uid;
-  //     user.name = userCast.name;
-  //     user.email = userCast.email;
-  //     user.score = userCast.score;
-  //   }
-  //   return user;
-  // }
-
-  // getUid(){
-  //   if(this.userDetails != null)
-  //     return this.userDetails.uid;
-  // }
-
   logout() {
+    this.loggedOut = true;
     this._firebaseAuth.auth.signOut()
       .then((res) => this.router.navigate(['/']));
+  }
+
+  ngOnDestroy(){
+    this.unsubscribe();
   }
 }

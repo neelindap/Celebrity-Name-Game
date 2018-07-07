@@ -13,13 +13,13 @@
       <li class="nav-item">
         <a class="nav-link" routerLink='/home' routerLinkActive='active'>Home</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="!this.authService.userDetails.isAnonymous">
         <a class="nav-link" routerLink='/leaderboard' routerLinkActive='active'>Leaderboard</a>
       </li>
     </ul>
 
     <ul class="navbar-nav">
-      <div class="btn-group" *ngIf="this.authService.isLoggedIn()">
+      <div class="btn-group" *ngIf="this.authService.isLoggedIn() && !this.authService.userDetails.isAnonymous">
         <!-- TODO: user profile page?-->
         <button class="btn btn-primary btn-sm" type="button">
           <span *ngIf="this.user">Welcome, {{this.user.name}}
@@ -31,8 +31,13 @@
           <span class="sr-only">Toggle Dropdown</span>
         </button>
         <div class="dropdown-menu">
-          <a class="dropdown-item" (click)=logout()>Logout</a>
+          <a class="dropdown-item logout-button" (click)=logout()>Logout</a>
         </div>
+      </div>
+
+      <div class="btn-group" *ngIf="this.authService.isLoggedIn() && this.authService.userDetails.isAnonymous">
+        <button class="btn btn-primary btn-sm logout-button-guest" type="button" (click)=logout()>End Guest Session
+        </button>
       </div>
     </ul>
   </div>

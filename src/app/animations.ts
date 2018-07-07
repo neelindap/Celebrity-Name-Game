@@ -10,39 +10,37 @@ export const fadeInAnimation =
             query(':enter', [
 
                 // css styles at start of transition
-                style({ opacity: 0 }),
+                style({ opacity: 0, transform: 'translateX(-250px)' }),
 
                 // animation and styles at end of transition
-                animate('50ms ease-out'
-                    , style({ opacity: 1 }))
+                animate('10ms', style({ opacity: 1, transform: 'translateX(0px)' }))
             ], { optional: true }),
             query(':leave', [
+                style({ opacity: 1, transform: 'translateX(0px)' }),
                 // animation and styles at end of transition
-                animate('50ms ease-out'
-                    , style({ opacity: 0 }))
+                animate('10ms' , style({ opacity: 0, transform: 'translateX(-250px)'}))
             ], { optional: true }),
         ]),
     ])
 
-export const staggerAnimation =
+export const staggerAnimationList =
     trigger('staggerAnimation', [
-        transition('* <=> *', [
-            query(
-                ':enter',
-                [
-                    style({ opacity: 0, transform: 'translateY(-15px)' }),
-                    stagger(
-                        '50ms',
-                        animate(
-                            '550ms ease-out',
-                            style({ opacity: 1, transform: 'translateY(0px)' })
-                        )
-                    )
-                ],
-                { optional: true }
-            ),
-            query(':leave', animate('50ms', style({ opacity: 0 })), {
-                optional: true
-            })
+        transition('void => *', [
+            query('.movie-list', style({ transform: 'translateX(-250px)' })),
+            query('.movie-list',
+                stagger(
+                    '10ms', [
+                        animate('150ms ease-in', style({ transform: 'translateX(0px)' }))
+                    ])
+            )
+        ]),
+        transition('* => void', [
+            query('.movie-list', style({ transform: 'translateX(0px)' })),
+            query('.movie-list',
+                stagger(
+                    '5ms', [
+                        animate('150ms', style({ transform: 'translateX(250px)' }))
+                    ])
+            )
         ])
     ])

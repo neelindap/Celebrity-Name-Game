@@ -3,6 +3,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { forEach } from '@typed/hashmap';
 import { Subject } from 'rxjs';
 import { UserService } from '../user/user.service';
+import { AuthService } from '../../auth/auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,8 @@ export class GameService {
   private subscription;
 
   constructor(private firebase: AngularFireDatabase,
-    private userService: UserService) {
+    private userService: UserService,
+    private authService: AuthService) {
     // Ref to firebase db -> games
     this.ref = this.firebase.list('games');
   }
@@ -70,8 +72,8 @@ export class GameService {
             i++;
           }, selectedAnswers);
 
-          // Update score in db
-          this.userService.updateUser(score);
+          this.userService.updateUser(score,
+            this.authService.userDetails.isAnonymous);
 
           // console.log(answers);
           // Emit answers object to subscribers
@@ -84,6 +86,6 @@ export class GameService {
   unsubscriveFromObject() {
     // Unsubscribe on game end
     if (this.subscription)
-      this.subscription.unsubscribe();
+      this.subscription.complete();
   }
 }
