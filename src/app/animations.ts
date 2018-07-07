@@ -10,16 +10,15 @@ export const fadeInAnimation =
             query(':enter', [
 
                 // css styles at start of transition
-                style({ opacity: 0 }),
+                style({ opacity: 0, transform: 'translateX(-250px)' }),
 
                 // animation and styles at end of transition
-                animate('0.3s'
-                    , style({ opacity: 1 }))
+                animate('10ms', style({ opacity: 1, transform: 'translateX(0px)' }))
             ], { optional: true }),
             query(':leave', [
+                style({ opacity: 1, transform: 'translateX(0px)' }),
                 // animation and styles at end of transition
-                animate('0.3s'
-                    , style({ opacity: 0 }))
+                animate('10ms' , style({ opacity: 0, transform: 'translateX(-250px)'}))
             ], { optional: true }),
         ]),
     ])
@@ -31,7 +30,7 @@ export const staggerAnimationList =
             query('.movie-list',
                 stagger(
                     '10ms', [
-                        animate('50ms ease-in', style({ transform: 'translateX(0px)' }))
+                        animate('150ms ease-in', style({ transform: 'translateX(0px)' }))
                     ])
             )
         ]),
@@ -39,8 +38,8 @@ export const staggerAnimationList =
             query('.movie-list', style({ transform: 'translateX(0px)' })),
             query('.movie-list',
                 stagger(
-                    '10ms', [
-                        animate('50ms', style({ transform: 'translateX(250px)' }))
+                    '5ms', [
+                        animate('150ms', style({ transform: 'translateX(250px)' }))
                     ])
             )
         ])
