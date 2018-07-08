@@ -53,16 +53,16 @@ describe('Landing Page', () => {
     page.navigateToLanding();
 
     // Home link
-    expect(page.getNavBarHome().count()).toEqual(0);
+    expect(page.getNavBarHome().isPresent()).toBeFalsy();
 
     // Leaderboard link
-    expect(page.getNavBarLeaderboard().count()).toEqual(0);
+    expect(page.getNavBarLeaderboard().isPresent()).toBeFalsy();
 
     // Logout link
-    expect(page.getNavBarLogout().count()).toEqual(0);
+    expect(page.getNavBarLogout().isPresent()).toBeFalsy();
 
     // Guest logout link
-    expect(page.getNavbarGuestLogout().count()).toEqual(0);
+    expect(page.getNavbarGuestLogout().isPresent()).toBeFalsy();
   });
 
   // Login button should be disabled on load of landing page
@@ -182,10 +182,10 @@ describe('Landing Page', () => {
     });
 
     // Home link should be present
-    expect(page.getNavBarHome().count()).toEqual(1);
+    expect(page.getNavBarHome().isPresent()).toBeTruthy();
 
     // Leaderboard link shouldn't be present
-    expect(page.getNavBarLeaderboard().count()).toEqual(0);
+    expect(page.getNavBarLeaderboard().isPresent()).toBeFalsy();
 
     // Normal logout button should not be present
     expect(page.getNavBarLogout().isPresent()).toBeFalsy();

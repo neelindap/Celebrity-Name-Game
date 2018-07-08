@@ -22,11 +22,11 @@ export class LandingPage {
   }
 
   getNavBarHome() {
-    return element.all(by.css('app-navigation a[href="/home"]'));
+    return element(by.css('app-navigation a[href="/home"]'));
   }
 
   getNavBarLeaderboard() {
-    return element.all(by.css('app-navigation a[href="/leaderboard"]'));
+    return element(by.css('app-navigation a[href="/leaderboard"]'));
   }
 
   logOutApplication() {
@@ -35,11 +35,11 @@ export class LandingPage {
   }
 
   getNavBarLogout() {
-    return element.all(by.css('.logout-button'));
+    return element(by.css('.logout-button'));
   }
 
   getNavbarGuestLogout() {
-    return element.all(by.css('.logout-button-guest'));
+    return element(by.css('.logout-button-guest'));
   }
 
   getEmailField() {
