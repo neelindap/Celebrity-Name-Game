@@ -87,8 +87,8 @@ describe('Landing Page', () => {
     });
   });
 
-  //Load register route on click and register button should be disabled
-  it('should open register page on clicking register tab', () => {
+  // Not allow user to register with already existing email id
+  it('should not allow user to register with already existing email id', () => {
     page.navigateToLanding();
     page.getRegisterTab().click();
 
@@ -98,7 +98,105 @@ describe('Landing Page', () => {
     });
 
     expect(page.getRegisterButton().isEnabled()).toBeFalsy();
-  });
+
+    let email = page.getEmailField();
+    // invalid email
+    email.clear().then(() => {
+      email.sendKeys('test@test');
+    });
+    expect(page.getErrorEmailText().isPresent()).toBeTruthy();
+
+    // Valid email
+    email.clear().then(() => {
+      email.sendKeys('test@test.com');
+    });
+    expect(page.getErrorEmailText().isPresent()).toBeFalsy();
+
+    // Invalid password
+    let password = page.getPasswordField();
+    password.clear().then(() => {
+      password.sendKeys('123');
+    });
+    expect(page.getErrorPasswordText().isPresent()).toBeTruthy();
+
+    // Valid password
+    password.clear().then(() => {
+      password.sendKeys('123456');
+    });
+    expect(page.getErrorPasswordText().isPresent()).toBeFalsy();
+
+
+    // Invalid password
+    let confirmPassword = page.getConfirmPasswordField();
+    confirmPassword.clear().then(() => {
+      confirmPassword.sendKeys('123');
+    });
+    expect(page.getErrorConfirmPasswordText().isPresent()).toBeTruthy();
+
+    // Valid password
+    confirmPassword.clear().then(() => {
+      confirmPassword.sendKeys('123456');
+    });
+    expect(page.getErrorConfirmPasswordText().isPresent()).toBeFalsy();
+
+    // Invalid name
+    let name = page.getFullNameField();
+    name.clear().then(() => {
+      name.sendKeys('Text-Name_Incorrect');
+    });
+    expect(page.getErrorNameText().isPresent()).toBeTruthy();
+
+    // Valid name
+    name.clear().then(() => {
+      name.sendKeys('Test Name');
+    });
+    expect(page.getErrorNameText().isPresent()).toBeFalsy();
+
+    expect(page.getRegisterButton().isEnabled()).toBeTruthy();
+
+    browser.waitForAngularEnabled(false);
+
+    page.getRegisterButton().click();
+
+    // Wait for register process
+    browser.sleep(5000);
+
+    browser.getCurrentUrl().then((url) => {
+      expect(url).toContain('/register');
+      return;
+    });
+  }, 10000);
+
+  // Allow user to log in as guest
+  it('should allow user to login as a guest user', () => {
+    page.navigateToLanding();
+
+    page.getLoginGuestButton().click();
+
+    // Wait for login process
+    browser.sleep(5000);
+
+    browser.getCurrentUrl().then((url) => {
+      expect(url).toContain('/home');
+      return;
+    });
+
+    // Home link should be present
+    expect(page.getNavBarHome().count()).toEqual(1);
+
+    // Leaderboard link shouldn't be present
+    expect(page.getNavBarLeaderboard().count()).toEqual(0);
+
+    // Normal logout button should not be present
+    expect(page.getNavBarLogout().isPresent()).toBeFalsy();
+
+    // Logout button for Guest user should be present
+    expect(page.getNavbarGuestLogout().isPresent()).toBeTruthy();
+
+    page.getNavbarGuestLogout().click();
+
+
+  }, 10000);
 
   // Login and redirect to home for correct Email id, validate and logout
   it('should allow user to login with correct email id', () => {
@@ -108,16 +206,13 @@ describe('Landing Page', () => {
       email.sendKeys('test@test.com');
     });
 
+
     let password = page.getPasswordField();
     password.clear().then(() => {
       password.sendKeys('123456');
     });
 
-    expect(page.getErrorEmailText().isPresent()).toBeFalsy();
-
-    page.getLoginButton().isEnabled().then((status) => {
-      expect(status).toBe(true)
-    });
+    expect(page.getLoginButton().isEnabled()).toBeTruthy();
 
     browser.waitForAngularEnabled(false);
 
@@ -131,6 +226,6 @@ describe('Landing Page', () => {
       return;
     });
 
-    page.logOutApplication();  
+    page.logOutApplication();
   }, 10000);
 });

@@ -5,68 +5,88 @@ export class LandingPage {
     return browser.get('/');
   }
 
-  navigateToHome(){
+  navigateToHome() {
     return browser.get('/home');
   }
 
-  navigateToLeaderboard(){
+  navigateToLeaderboard() {
     return browser.get('/leaderboard');
   }
 
-  navigateToInvalidURL(){
+  navigateToInvalidURL() {
     return browser.get('/thisurldoesntexist');
   }
 
-  getBrandTitle(){
+  getBrandTitle() {
     return element(by.css('.navbar-brand')).getText();
   }
 
-  getNavBarHome(){
+  getNavBarHome() {
     return element.all(by.css('app-navigation a[href="/home"]'));
   }
 
-  getNavBarLeaderboard(){
+  getNavBarLeaderboard() {
     return element.all(by.css('app-navigation a[href="/leaderboard"]'));
   }
 
-  logOutApplication(){
+  logOutApplication() {
     element(by.css('button[data-toggle="dropdown"]')).click();
     element(by.css('.logout-button')).click();
   }
 
-  getNavBarLogout(){
+  getNavBarLogout() {
     return element.all(by.css('.logout-button'));
   }
 
-  getNavbarGuestLogout(){
+  getNavbarGuestLogout() {
     return element.all(by.css('.logout-button-guest'));
   }
 
-  getEmailField(){
+  getEmailField() {
     return element(by.css('input[formcontrolname="email"]'));
   }
 
-  getPasswordField(){
+  getPasswordField() {
     return element(by.css('input[formcontrolname="password"]'));
   }
 
-  getLoginButton(){
+  getConfirmPasswordField() {
+    return element(by.css('input[formcontrolname="confirmPassword"]'));
+  }
+
+  getFullNameField() {
+    return element(by.css('input[formcontrolname="fullname"]'));
+  }
+
+  getLoginButton() {
     return element(by.css('input[value="LOG IN"]'));
   }
 
-  getLoginGuestButton(){
+  getLoginGuestButton() {
     return element(by.css('input[value="CONTINUE AS GUEST"]'));
   }
 
-  getErrorEmailText(){
+  getErrorEmailText() {
     return element(by.css('.error-email'));
   }
 
-  getRegisterTab(){
+  getErrorPasswordText() {
+    return element(by.css('.error-password'));
+  }
+
+  getErrorConfirmPasswordText() {
+    return element(by.css('.error-confirmPassword'));
+  }
+
+  getErrorNameText() {
+    return element(by.css('.error-name'));
+  }
+
+  getRegisterTab() {
     return element(by.css('a[href="/register"]'));
   }
 
-  getRegisterButton(){
+  getRegisterButton() {
     return element(by.css('input[value="REGISTER"]'));
   }
 
