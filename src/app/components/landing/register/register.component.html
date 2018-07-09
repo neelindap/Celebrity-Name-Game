@@ -6,7 +6,7 @@
     <div *ngIf="regForm.get('email').errors.required">
       Email address is required.
     </div>
-    <div *ngIf="regForm.get('email').errors.pattern">
+    <div *ngIf="regForm.get('email').errors.pattern" class="error-email">
       Email address is not properly formatted.
     </div>
   </div>
@@ -18,7 +18,7 @@
     <div *ngIf="regForm.get('password').errors.required">
       Password is required.
     </div>
-    <div *ngIf="regForm.get('password').errors.minlength">
+    <div *ngIf="regForm.get('password').errors.minlength" class="error-password">
       Password must be at least 6 characters long.
     </div>
   </div>
@@ -32,7 +32,7 @@
     <div *ngIf="regForm.get('confirmPassword').errors.required">
       Confirm password is required.
     </div>
-    <div *ngIf="regForm.get('confirmPassword').errors?.passwordNotMatch">
+    <div *ngIf="regForm.get('confirmPassword').errors?.passwordNotMatch" class="error-confirmPassword">
       Password fields do not match.
     </div>
   </div>
@@ -44,7 +44,7 @@
     <div *ngIf="regForm.get('fullname').errors.required">
       Name is required.
     </div>
-    <div *ngIf="regForm.get('fullname').errors.pattern">
+    <div *ngIf="regForm.get('fullname').errors.pattern" class="error-name">
       Name shouldn't include special characters(except space between first and last name)
     </div>
   </div>

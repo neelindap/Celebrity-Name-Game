@@ -146,13 +146,6 @@ export class HomeComponent implements OnInit {
         this.castLoading = false;
         this.noCast = false;
 
-        // if (this.counter < 5) {
-        //   this.noCast = true;
-        //   this.castPresent = false;
-        //   this.cast = new Array();
-        //   this.counter = 0;
-        //   return;
-        // }
         // store in DB -> Get stored item key
         this.key = this.gameService.gameEntry(this.cast);
 

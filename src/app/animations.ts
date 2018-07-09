@@ -1,5 +1,5 @@
 // import the required animation functions from the angular animations module
-import { trigger, query, animate, transition, style, stagger } from '@angular/animations';
+import { trigger, query, animate, transition, style, stagger, state } from '@angular/animations';
 
 export const fadeInAnimation =
     // trigger name for attaching this animation to an element using the [@triggerName] syntax
@@ -10,15 +10,15 @@ export const fadeInAnimation =
             query(':enter', [
 
                 // css styles at start of transition
-                style({ opacity: 0, transform: 'translateX(-250px)' }),
+                style({ opacity: 0 }),
 
                 // animation and styles at end of transition
-                animate('10ms', style({ opacity: 1, transform: 'translateX(0px)' }))
+                animate('100ms ease-in-out', style({ opacity: 1 }))
             ], { optional: true }),
             query(':leave', [
-                style({ opacity: 1, transform: 'translateX(0px)' }),
+                style({ opacity: 1 }),
                 // animation and styles at end of transition
-                animate('10ms' , style({ opacity: 0, transform: 'translateX(-250px)'}))
+                animate('100ms ease-in-out', style({ opacity: 0 }))
             ], { optional: true }),
         ]),
     ])
@@ -42,5 +42,14 @@ export const staggerAnimationList =
                         animate('150ms', style({ transform: 'translateX(250px)' }))
                     ])
             )
+        ])
+    ])
+
+export const shrinkAnimation =
+    trigger('shrinkOut', [
+        state('in', style({ height: '*' })),
+        transition('* => void', [
+            style({ height: '*' }),
+            animate(250, style({ height: 0 }))
         ])
     ])

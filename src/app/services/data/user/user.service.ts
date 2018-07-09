@@ -89,7 +89,9 @@ export class UserService {
 
       // Reverse array as Firebase doesn't provide descending sorting order
       score = score.reverse();
-      this.scoreSubject.next(score);
+
+      // Get top 5 users
+      this.scoreSubject.next(score.splice(0,5));
     });
   }
 

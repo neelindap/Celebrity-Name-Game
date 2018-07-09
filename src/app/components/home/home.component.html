@@ -22,7 +22,7 @@
   <!-- No results found-->
   <div class="row mt-5" *ngIf="noMovies && movieForm.get('title').value && movieForm.get('title').value.length > 0">
     <div class="offset-md-2 col-md-8">
-      <div class="alert alert-danger fade show text-center" role="alert">
+      <div class="alert alert-danger fade show text-center no-movie" role="alert">
         Sorry, no movies by the name {{movieForm.get('title').value}} present in the database.
       </div>
     </div>
@@ -69,7 +69,7 @@
 </div>
 
 <ng-template #zeroScore>
-  <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+  <div class="alert alert-danger alert-dismissible fade show text-center zero-score" role="alert">
     Unfortunately, you scored 0 on this round.
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
