@@ -1,4 +1,23 @@
-# CelebNameGame
+# What is Match me If you Can?
+- ‘Match Me If  You Can’ is a simple game wherein you match a celebrity’s face with their name
+- You need to search for a movie title, and you will be presented with cast member’s photos
+- You will also be presented with names in random order
+- Your task is to match the face to their name and submit you answers
+- You will be granted 1 point for each correct answer
+- You can check out the current leaders in the leaderboard tab
+
+# How to play?
+- To play the game, you can either register with the application or continue as a guest
+- As a registered user, your scores will be saved in the database
+- You can also have a look at the leaderboard and check where you stand amongst all players
+- As a guest you’ll be able to play the game, but not save your scores or check the leaderboard
+- Once you log in, you can search for and select a movie title
+- You’ll be presented with pictures of 5 cast members and their names in random order
+- You have to match the faces and names, and every correct answer will fetch you 1 point
+
+--------  
+
+# Development details
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
