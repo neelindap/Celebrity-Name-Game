@@ -40,12 +40,6 @@ describe('Landing Page', () => {
       expect(url).toContain('/notFound');
       return;
     });
-  })
-
-  // Landing page should contain navbar with brand name
-  it('should display brand name', () => {
-    page.navigateToLanding();
-    expect(page.getBrandTitle()).toEqual('Celebrity Name');
   });
 
   // Landing page shouldn't contain links in navbar
